@@ -132,7 +132,7 @@ export function NavigationMenuDemo() {
                 <NavigationMenuContent className="navigation-menu__content  z-[9999]">
                   <ul className="grid gap-2 md:w-[300px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                     <ListItem href="/team/kiran" title="Advocate">
-                      Kiran
+                      Kiran Subedhi
                     </ListItem>
                     <ListItem href="/team/dibash" title="Content Writer">
                       Dibash Gautam

@@ -221,6 +221,6 @@ html {
 
 .navigation-menu__content {
   width: auto !important;
-  max-width: 500px !important;
-  background: white; /* Important!!! */
+  max-width: 1000px !important;
+  background: #ffffff; /* Important!!! */
 }

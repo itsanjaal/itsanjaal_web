@@ -13,7 +13,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-   NavigationMenuViewport,
+  NavigationMenuViewport,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
@@ -76,6 +76,13 @@ export function NavigationMenuDemo() {
                           className="from-muted/50 to-muted flex h-full w-full flex-col justify-end
                               rounded-md bg-gradient-to-b p-4 no-underline outline-none transition-all duration-200 select-none md:p-6"
                         >
+                          <Image
+                            src="/courses.jpg"
+                            alt="Courses"
+                            width={400}
+                            height={200}
+                            className=" inset-0 h-full w-full rounded-md object-cover"
+                          />
                           <div className="mb-2 text-lg font-medium">
                             IT Courses
                           </div>
@@ -93,16 +100,42 @@ export function NavigationMenuDemo() {
 
                     <ListItem
                       href="/pythonn"
-                      title="Python Programming With Data Analysis"
+                      title="Fundamenrtals of Python programming"
                     >
                       Master Python, Pandas, NumPy, and visualization.
                     </ListItem>
+
+                    
 
                     <ListItem
                       href="/ui"
                       title="UI/UX Design Using Figma & Canva"
                     >
                       Build exceptional UI/UX with modern design tools.
+                    </ListItem>
+                    <ListItem
+                      href="/bioinformatics"
+                      title="Bioinformatics with Python"
+                    >
+                      Master Python, and biodata analysis.
+                    </ListItem>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+
+            <NavigationMenuList>
+              {/* Featured Courses */}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>Team</NavigationMenuTrigger>
+
+                <NavigationMenuContent className="navigation-menu__content  z-[9999]">
+                  <ul className="grid gap-2 md:w-[300px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                    <ListItem href="/team/kiran" title="Advocate">
+                      Kiran
+                    </ListItem>
+                    <ListItem href="/team/dibash" title="Content Writer">
+                      Dibash Gautam
                     </ListItem>
                   </ul>
                 </NavigationMenuContent>

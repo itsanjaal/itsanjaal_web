@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     siteName: "IT Sanjaal Pvt. Ltd.",
     images: [
       {
-        url: "/opengraph-image.jpg", // ✅ Use proper OG image instead of favicon
+        url: "/Logo.png", // ✅ Use proper OG image instead of favicon
         width: 1200,
         height: 630,
         alt: "IT Sanjaal Pvt. Ltd. Logo",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     title: "IT Sanjaal Pvt. Ltd. - Leading Digital Innovation Company",
     description:
       "Transform your business with our cutting-edge digital solutions.",
-    images: ["/opengraph-image.jpg"],
+    images: ["/Logo.png"], // ✅ Use proper Twitter image instead of favicon
   },
 
   robots: {

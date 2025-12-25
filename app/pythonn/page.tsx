@@ -43,7 +43,7 @@ export default function PythonProgrammingPage() {
         title="Python for Everybody Specialization"
         description="Learn to program, analyze data, and visualize insights using Python."
         instructor={{
-          name: "Charles Russell Severance",
+          name: "Som Tamang",
           imageUrl: "/team/instructors/charles.png",
         }}
         enrollButtonText="Enroll for Rs. 1499/-"

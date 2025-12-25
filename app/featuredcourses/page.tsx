@@ -9,7 +9,7 @@ const FeaturedCourses = () => {
       id: 1,
       title: "Python Programming",
       description: "Master the fundamentals of Python, one of the most popular programming languages. Learn variables, loops, functions, OOP, and build real-world projects.",
-      duration: "8 weeks",
+      duration: "4 weeks",
       gradient: "from-blue-500 to-indigo-600",
       icon: (
         <svg className="w-24 h-24 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -23,7 +23,7 @@ const FeaturedCourses = () => {
       id: 2,
       title: "UI/UX Design",
       description: "Learn user-centered design principles, wireframing, prototyping with Figma, and create beautiful, intuitive interfaces for web and mobile apps.",
-      duration: "10 weeks",
+      duration: "4 weeks",
       gradient: "from-purple-500 to-pink-600",
       icon: (
         <svg className="w-24 h-24 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -37,7 +37,7 @@ const FeaturedCourses = () => {
       id: 3,
       title: "MS Excel Course",
       description: "From basics to advanced: formulas, pivot tables, charts, data analysis, macros, and automation to boost your productivity and career.",
-      duration: "6 weeks",
+      duration: "4 weeks",
       gradient: "from-green-500 to-teal-600",
       icon: (
         <svg className="w-24 h-24 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">

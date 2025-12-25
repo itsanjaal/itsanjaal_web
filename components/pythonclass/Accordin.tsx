@@ -32,7 +32,7 @@ export default function FAQAccordion() {
 {
   question: "Do you provide support after course completion?",
   answer:
-    "Yes, we offer post-course guidance, mentorship, and help with career or project-related queries.",
+    "We generally keep the door open for any follow-up questions or light mentorship as you start applying what you've learned.",
 },
 {
   question: "How can I enroll in a course?",

@@ -164,7 +164,7 @@ export default function PythonSpecializationCombined({
 
           {/* Dynamic Enrolled Count */}
           <p className="text-[#0B2E59] mb-6">
-            {enrolledCount} already enrolled
+            {enrolledCount} 
           </p>
         </div>
 

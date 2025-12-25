@@ -45,8 +45,8 @@ export default function PythonProgrammingPage() {
           name: "Ashmin Dhakal",
           imageUrl: "/team/instructors/charles.png",
         }}
-        enrollButtonText="Enroll for Rs. 999/-"
-        enrolledCount="1,874,972"
+        enrollButtonText="Enroll for Rs. 1499/-"
+        enrolledCount=""
         features={[
           { title: "5 course series", text: "In-depth knowledge of a subject" },
           { title: "4.8 ★", text: "217,459 reviews" },

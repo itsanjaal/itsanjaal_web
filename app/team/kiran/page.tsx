@@ -5,7 +5,7 @@ export default function RoshanPage() {
     <section className="py-20 px-6 max-w-4xl mx-auto text-center">
       <Image
         src="/placeholder-user.jpg"
-        alt="Roshan Shrestha"
+        alt="Kiran Subedhi"
         width={180}
         height={180}
         className="rounded-full mx-auto mb-6"
@@ -15,8 +15,13 @@ export default function RoshanPage() {
       <p className="text-gray-500 text-lg mb-6">Advocate</p>
 
       <p className="text-base text-gray-700 leading-relaxed max-w-2xl mx-auto">
-        Roshan is a frontend developer skilled in React, Tailwind, and UI
-        component systems. He focuses on clean code and responsive design.
+        kiran Subedhi is a dedicated advocate with over a decade of experience in
+        legal practice. He has a strong background in civil and criminal law,
+        representing clients in various courts across Nepal. Kiran is known for
+        His meticulous approach to case preparation and her unwavering commitment
+        to justice. he has successfully handled numerous high-profile cases and is
+        respected for his ethical standards and advocacy skills.
+       
       </p>
 
       <div className="mt-6">

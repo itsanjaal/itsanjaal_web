@@ -42,11 +42,11 @@ export default function PythonProgrammingPage() {
         title="UI/UX for Everybody Specialization"
         description="Learn to program, analyze data, and visualize insights using Python."
         instructor={{
-          name: "Dibash Gautam",
+          name: "Suman Sapkota",
           imageUrl: "/team/instructors/charles.png",
         }}
-        enrollButtonText="Enroll for Rs. 999/-"
-        enrolledCount="1,874,972"
+        enrollButtonText="Enroll for Rs. 1499/-"
+        enrolledCount=""
         features={[
           { title: "5 course series", text: "In-depth knowledge of a subject" },
           { title: "4.8 ★", text: "217,459 reviews" },

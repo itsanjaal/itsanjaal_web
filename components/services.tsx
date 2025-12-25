@@ -40,13 +40,13 @@ const services = [
     features: ["Python Programming with data Analysis", "MS Excel Training", "Machine Learning Algorithms", "MERN Stack Development","Flutter App Development"],
     color: "green",
   },
-  {
-    icon: Shield,
-    title: "Cybersecurity",
-    description: "Comprehensive security solutions to protect your digital assets and data.",
-    features: ["Security Audits", "Penetration Testing", "Compliance", "Risk Assessment"],
-    color: "blue",
-  },
+  // {
+  //   icon: Shield,
+  //   title: "Cybersecurity",
+  //   description: "Comprehensive security solutions to protect your digital assets and data.",
+  //   features: ["Security Audits", "Penetration Testing", "Compliance", "Risk Assessment"],
+  //   color: "blue",
+  // },
 ]
 
 export default function Services() {

@@ -106,8 +106,8 @@ export default function PythonProgrammingPage() {
       {/* Instructor */}
       <div className="container mx-auto px-4 py-16">
         <InstructorProfile
-          name="Suman Sapkota"
-          title="Senior Data Science Instructor"
+          name="Som Tamang"
+          title="Python,django and Data Analysis specialist"
           bio="Passionate about turning data into insights and helping students achieve their goals in programming and analytics."
           imageUrl="/suman.jpg"
           qas={instructorQAs}

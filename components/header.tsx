@@ -75,9 +75,9 @@ export default function NavigationMenuDemo() {
             <Image
               src="/Logo.png"
               alt="IT Sanjaal"
-              width={120}
-              height={40}
-              className="h-10 w-auto mix-blend-multiply"
+              width={140}
+              height={60}
+              className="h-25 w-auto mix-blend-multiply"
               priority
             />
           </Link>
@@ -88,9 +88,10 @@ export default function NavigationMenuDemo() {
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Featured Courses
                 <NavigationMenuContent>
-                  <ul className="grid gap-2 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                  <ul className="flex flex-col p-4 md:w-[200px] lg:w-[300px] lg:grid-cols-[.75fr_1fr]">
                     <li className="row-span-4">
-                      <NavigationMenuLink asChild>
+
+                      {/* <NavigationMenuLink asChild>
                         <Link
                           href="/featuredcourses"
                           className="flex h-full flex-col justify-end rounded-md bg-muted p-4"
@@ -107,7 +108,7 @@ export default function NavigationMenuDemo() {
                             Build real-world IT skills.
                           </p>
                         </Link>
-                      </NavigationMenuLink>
+                      </NavigationMenuLink> */}
                     </li>
 
                     <ListItem href="/msexcel" title="MS Excel Class">

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Code, Smartphone, Brain, Palette, Database, Shield } from "lucide-react"
+import { Code, Smartphone, Brain, Palette, Database, Dna,Shield,Infinity, Book } from "lucide-react"
 
 const services = [
   {
@@ -17,13 +17,13 @@ const services = [
     title: "Mobile App Development",
     description: "Native and cross-platform mobile applications that deliver exceptional user experiences.",
     features: ["iOS & Android", "React Native", "Flutter", "App Store Optimization"],
-    color: "blue",
+    color: "green",
   },
   {
-    icon: Brain,
-    title: "AI & Machine Learning",
-    description: "Intelligent solutions powered by artificial intelligence and machine learning algorithms.",
-    features: ["Custom AI Models", "Data Analytics", "Automation", "Predictive Analysis"],
+    icon: Database,
+    title: "IT Courses",
+    description: "Industry driven training with Hands on Projects.",
+    features: ["Python Programming with data Analysis", "MS Excel Training", "Prompting", "MERN Stack Development"],
     color: "green",
   },
   {
@@ -31,13 +31,27 @@ const services = [
     title: "UI/UX Design",
     description: "Beautiful, intuitive designs that enhance user engagement and drive conversions.",
     features: ["User Research", "Wireframing", "Prototyping", "Design Systems"],
-    color: "blue",
+    color: "green",
   },
   {
-    icon: Database,
-    title: "IT Courses",
-    description: "Industry driven training with Hands on Projects.",
-    features: ["Python Programming with data Analysis", "MS Excel Training", "Machine Learning Algorithms", "MERN Stack Development","Flutter App Development"],
+    icon: Infinity,
+    title: "Dev Ops",
+    description: "Scalable and reliable infrastructure solutions to streamline your development and deployment processes.",
+    features: ["Cloud Services", "CI/CD Pipelines", "Containerization", "Monitoring & Logging"],
+    color: "green",
+  },
+  {
+    icon: Dna,
+    title: "Bioinformatics(Genome Analysis)",
+    description: " Analyze and interpret biological data using Python programming and bioinformatics tools.",
+    features: ["DNA Sequencing", "Protein Structure Prediction", "Bioinformatics Tools", "Data Visualization"],
+    color: "green",
+  },
+  {
+    icon: Book,
+    title: "Content Writing and Assignments",
+    description: "Professional content writing and academic assignments tailored to your needs.",
+    features: ["SEO Writing", "Research Papers", "Blog Posts", "Editing & Proofreading"],
     color: "green",
   },
   // {

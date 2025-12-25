@@ -21,9 +21,9 @@ export default function Footer() {
               <Image
                 src="/Logo.png"
                 alt="Kodedristi Software"
-                width={50}
-                height={50}
-                className="w-15 h-15"
+                width={60}
+                height={60}
+                className="w-20 h-20"
               />
               <span className="text-xl font-bold text-red-700">
                 {" "}

@@ -28,7 +28,7 @@ export default function RoshanPage() {
         <a
           href="https://linkedin.com"
           target="_blank"
-          className="text-blue-600 underline"
+          className="text-red-600 underline"
         >
           LinkedIn
         </a>

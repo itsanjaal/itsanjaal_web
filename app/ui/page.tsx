@@ -37,6 +37,7 @@ export default function PythonProgrammingPage() {
       {/* <Header /> */}
       {/* Hero Section */}
       <PythonSpecializationCombined
+        image="/ui_ux.png"
         backgroundImage="/course/python-bg.jpg"
         pythonLogo="/python-logo.png"
         title="UI/UX for Everybody Specialization"
@@ -48,8 +49,8 @@ export default function PythonProgrammingPage() {
         enrollButtonText="Enroll for Rs. 1499/-"
         enrolledCount=""
         features={[
+          { title: "4.8", text: "217,459 reviews" },
           { title: "5 course series", text: "In-depth knowledge of a subject" },
-          { title: "4.8 ★", text: "217,459 reviews" },
           { title: "Beginner level", text: "No prior experience required" },
           { title: "Flexible schedule", text: "Learn at your own pace" },
         ]}
@@ -60,19 +61,19 @@ export default function PythonProgrammingPage() {
 
         <div className="grid md:grid-cols-3 gap-6">
           <div className="bg-white p-6 rounded-xl shadow">
-            <Calendar className="w-10 h-10 text-blue-600" />
+            <Calendar className="w-10 h-10 text-red-600" />
             <h3 className="text-xl font-semibold mt-3">Duration</h3>
             <p className="mt-2 text-gray-700">4 Weeks • 1 hour per class</p>
           </div>
 
           <div className="bg-white p-6 rounded-xl shadow">
-            <BookOpen className="w-10 h-10 text-blue-600" />
+            <BookOpen className="w-10 h-10 text-red-600" />
             <h3 className="text-xl font-semibold mt-3">Mode</h3>
             <p className="mt-2 text-gray-700">Online / Offline</p>
           </div>
 
           <div className="bg-white p-6 rounded-xl shadow">
-            <Users className="w-10 h-10 text-blue-600" />
+            <Users className="w-10 h-10 text-red-600" />
             <h3 className="text-xl font-semibold mt-3">Level</h3>
             <p className="mt-2 text-gray-700">Beginner to Intermediate</p>
           </div>
@@ -95,7 +96,7 @@ export default function PythonProgrammingPage() {
               "Usability testing and real-world UI/UX projects",
             ].map((item, index) => (
               <div key={index} className="flex items-start space-x-3">
-                <CheckCircle className="text-blue-600 w-6 h-6 mt-1" />
+                <CheckCircle className="text-red-600 w-6 h-6 mt-1" />
                 <p className="text-gray-800">{item}</p>
               </div>
             ))}
@@ -113,12 +114,12 @@ export default function PythonProgrammingPage() {
         />
       </div>
       ;{/* CTA */}
-      {/* <section className="w-full bg-blue-700 text-white py-14 text-center">
+      {/* <section className="w-full bg-red-700 text-white py-14 text-center">
         <h2 className="text-3xl font-bold">Ready to Start Learning?</h2>
         <p className="mt-3 opacity-90">
           Join our Python Programming with Data Analysis class today.
         </p>
-        <Button className="mt-6 bg-white text-blue-700 hover:bg-gray-100 px-6 py-3 rounded-xl">
+        <Button className="mt-6 bg-white text-red-700 hover:bg-gray-100 px-6 py-3 rounded-xl">
           Enroll Now
         </Button>
       </section> */}

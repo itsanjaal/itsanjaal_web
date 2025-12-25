@@ -10,13 +10,13 @@ const FeaturedCourses = () => {
       title: "Python Programming",
       description: "Master the fundamentals of Python, one of the most popular programming languages. Learn variables, loops, functions, OOP, and build real-world projects.",
       duration: "4 weeks",
-      gradient: "from-blue-500 to-indigo-600",
+      gradient: "from-red-500 to-red-600",
       icon: (
         <svg className="w-24 h-24 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
         </svg>
       ),
-      buttonColor: "bg-indigo-600 hover:bg-indigo-700",
+      buttonColor: "bg-red-600 hover:bg-red-700",
       path: "/pythonn",
     },
     {

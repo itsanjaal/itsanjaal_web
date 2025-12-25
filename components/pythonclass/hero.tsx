@@ -5,6 +5,8 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import EnrollModal from "@/components/EnrollModal";
 import { useState } from "react";
+import "./coursebg.css";
+import { Star } from "lucide-react";
 
 interface Instructor {
   name: string;
@@ -17,6 +19,7 @@ interface Feature {
 }
 
 interface PythonSpecializationProps {
+  image: string;
   backgroundImage: string;
   pythonLogo: string;
   title: string;
@@ -29,7 +32,10 @@ interface PythonSpecializationProps {
 
 export default function PythonSpecializationCombined({
   backgroundImage,
+  image,
+
   // pythonLogo,
+
   title,
   description,
   instructor,
@@ -145,6 +151,24 @@ export default function PythonSpecializationCombined({
               Instructor: {instructor.name}
             </p>
           </div>
+          <div className="rating">
+            <ul className="list-disc">
+              {features.map((feature, index) => (
+                <li key={index} className="mb-4">
+                  <h3 className="font-semibold text-[#0B2E59] text-lg">
+                    <div className="flex flex-row">
+                      {feature.title}
+                      {index === 0 && (
+                        <span className="ml-2">
+                          <Star fill="#C4710D" stroke="{0}"  />
+                        </span>
+                      )}
+                    </div>
+                  </h3>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           {/* Dynamic Button */}
           <div className="mb-6">
@@ -163,21 +187,30 @@ export default function PythonSpecializationCombined({
           </div>
 
           {/* Dynamic Enrolled Count */}
-          <p className="text-[#0B2E59] mb-6">
-            {enrolledCount} 
-          </p>
+          <p className="text-[#0B2E59] mb-6">{enrolledCount}</p>
         </div>
 
         {/* Dynamic Feature Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 bg-white/70 backdrop-blur-md p-6 rounded-2xl shadow-lg">
-          {features.map((feature, index) => (
+        <div>
+          <div className="course-bg">
+            <img src={image} alt="" className="p-10 bg-" />
+          </div>
+        </div>
+        {/* <Image
+            src="/course/python-logo.png"
+            alt="Python Logo"
+            width={100}
+            height={100}
+            className="object-contain mx-auto mb-4"
+          /> */}
+
+        {/* {features.map((feature, index) => (
             <FeatureCard
               key={index}
               title={feature.title}
               text={feature.text}
             />
-          ))}
-        </div>
+          ))} */}
       </div>
     </section>
   );

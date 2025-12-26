@@ -1,75 +1,72 @@
 "use client";
 
-import * as React from "react";
-import { Menu, X } from "lucide-react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-
-export default function NavigationMenuDemo() {
+export default function Navbar() {
   const isMobile = useIsMobile();
-  const [open, setOpen] = React.useState(false);
 
-  const menuRef = React.useRef<HTMLDivElement>(null);
-  const buttonRef = React.useRef<HTMLButtonElement>(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [coursesOpen, setCoursesOpen] = useState(false);
+  const [teamOpen, setTeamOpen] = useState(false);
 
-  // const element = document.querySelector("#radix-_r_0_-trigger-radix-_r_1_");
+  const navRef = useRef<HTMLDivElement>(null);
+  const closeTimeout = useRef<NodeJS.Timeout | null>(null);
 
-  // // Triggered when the mouse enters the element
-  // element.addEventListener("mouseenter", () => {
-  //   console.log("Mouse is over the element!");
-  // });
+  /* ---------------- Close helpers ---------------- */
 
-  // // Triggered when the mouse leaves the element
-  // element.addEventListener("mouseleave", () => {
-  //   console.log("Mouse has left!");
-  // });
+  const closeAll = () => {
+    setMobileOpen(false);
+    setCoursesOpen(false);
+    setTeamOpen(false);
+  };
 
-  // Close on outside click + Escape
-  React.useEffect(() => {
+  const openMenu = (set: (v: boolean) => void) => {
+    if (closeTimeout.current) clearTimeout(closeTimeout.current);
+    set(true);
+  };
+
+  const delayedClose = (set: (v: boolean) => void) => {
+    closeTimeout.current = setTimeout(() => set(false), 150);
+  };
+
+  /* ---------------- Outside click + ESC ---------------- */
+
+  useEffect(() => {
     function handleClose(e: MouseEvent | KeyboardEvent) {
       if (
         e instanceof MouseEvent &&
-        menuRef.current &&
-        !menuRef.current.contains(e.target as Node) &&
-        buttonRef.current &&
-        !buttonRef.current.contains(e.target as Node)
+        navRef.current &&
+        !navRef.current.contains(e.target as Node)
       ) {
-        setOpen(false);
+        closeAll();
       }
 
       if (e instanceof KeyboardEvent && e.key === "Escape") {
-        setOpen(false);
+        closeAll();
       }
     }
 
-    if (open) {
-      document.addEventListener("mousedown", handleClose);
-      document.addEventListener("keydown", handleClose);
-    }
+    document.addEventListener("mousedown", handleClose);
+    document.addEventListener("keydown", handleClose);
 
     return () => {
       document.removeEventListener("mousedown", handleClose);
       document.removeEventListener("keydown", handleClose);
     };
-  }, [open]);
+  }, []);
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-white shadow-md">
-      {/* ================= DESKTOP NAV ================= */}
+    <header className="fixed top-0 z-50 w-full bg-white shadow-md">
+      {/* ================= DESKTOP ================= */}
       {!isMobile && (
-        <nav className="container mx-auto flex h-16 items-center px-6">
+        <nav
+          ref={navRef}
+          className="container mx-auto flex h-16 items-center px-6"
+        >
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
@@ -77,89 +74,116 @@ export default function NavigationMenuDemo() {
               alt="IT Sanjaal"
               width={140}
               height={60}
-              className="h-25 w-auto mix-blend-multiply"
+              className="mix-blend-multiply"
               priority
             />
           </Link>
 
-          <NavigationMenu className="ml-10">
-            <NavigationMenuList>
-              {/* Courses */}
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>Featured Courses
-                <NavigationMenuContent>
-                  <ul className="flex flex-col p-4 md:w-[200px] lg:w-[300px] lg:grid-cols-[.75fr_1fr]">
-                    <li className="row-span-4">
+          <ul className="ml-10 flex items-center gap-10">
+            {/* Featured Courses */}
+            <li
+              className="relative"
+              onMouseEnter={() => openMenu(setCoursesOpen)}
+              onMouseLeave={() => delayedClose(setCoursesOpen)}
+            >
+              <button
+                aria-expanded={coursesOpen}
+                className="flex items-center gap-1 font-medium hover:text-primary focus:outline-none"
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    setCoursesOpen((v) => !v);
+                  }
+                  if (e.key === "Escape") {
+                    setCoursesOpen(false);
+                  }
+                }}
+              >
+                Featured Courses
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform duration-200 ${
+                    coursesOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
 
-                      {/* <NavigationMenuLink asChild>
-                        <Link
-                          href="/featuredcourses"
-                          className="flex h-full flex-col justify-end rounded-md bg-muted p-4"
-                        >
-                          <Image
-                            src="/courses.jpg"
-                            alt="Courses"
-                            width={400}
-                            height={200}
-                            className="rounded-md object-cover"
-                          />
-                          <div className="mt-2 font-medium">IT Courses</div>
-                          <p className="text-sm text-muted-foreground">
-                            Build real-world IT skills.
-                          </p>
-                        </Link>
-                      </NavigationMenuLink> */}
-                    </li>
+              <AnimatedDropdown open={coursesOpen}>
+                <DropdownItem
+                  href="/msexcel"
+                  title="MS Excel Class"
+                  desc="From basics to advanced Excel."
+                />
+                <DropdownItem
+                  href="/pythonn"
+                  title="Python Programming"
+                  desc="Python with data analysis."
+                />
+                <DropdownItem
+                  href="/ui"
+                  title="UI/UX Design"
+                  desc="Figma & Canva based UI/UX."
+                />
+                <DropdownItem
+                  href="/bioinformatics"
+                  title="Bioinformatics"
+                  desc="Python for biodata analysis."
+                />
+              </AnimatedDropdown>
+            </li>
 
-                    <ListItem href="/msexcel" title="MS Excel Class">
-                      From basics to advanced Excel.
-                    </ListItem>
-                    <ListItem href="/pythonn" title="Python Programming">
-                      Python with data analysis.
-                    </ListItem>
-                    <ListItem href="/ui" title="UI/UX Design">
-                      Figma & Canva based UI/UX.
-                    </ListItem>
-                    <ListItem href="/bioinformatics" title="Bioinformatics">
-                      Python for biodata analysis.
-                    </ListItem>
-                  </ul>
-                </NavigationMenuContent>
-                </NavigationMenuTrigger>
-              </NavigationMenuItem>
+            {/* Team */}
+            <li
+              className="relative"
+              onMouseEnter={() => openMenu(setTeamOpen)}
+              onMouseLeave={() => delayedClose(setTeamOpen)}
+            >
+              <button
+                aria-expanded={teamOpen}
+                className="flex items-center gap-1 font-medium hover:text-primary focus:outline-none"
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    setTeamOpen((v) => !v);
+                  }
+                  if (e.key === "Escape") {
+                    setTeamOpen(false);
+                  }
+                }}
+              >
+                Team
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform duration-200 ${
+                    teamOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
 
-              {/* Team */}
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>Team</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid gap-2 p-4 w-[300px]">
-                    <ListItem href="/team/kiran" title="Advocate">
-                      Kiran Subedhi
-                    </ListItem>
-                    <ListItem href="/team/dibash" title="Content Writer">
-                      Dibash Gautam
-                    </ListItem>
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
+              <AnimatedDropdown open={teamOpen}>
+                <DropdownItem
+                  href="/team/kiran"
+                  title="Kiran Subedhi"
+                  desc="Legal advisor & advocate."
+                />
+                <DropdownItem
+                  href="/team/dibash"
+                  title="Dibash Gautam"
+                  desc="Content writer & editor."
+                />
+              </AnimatedDropdown>
+            </li>
 
-              {/* Contact */}
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  asChild
-                  className={navigationMenuTriggerStyle()}
-                >
-                  <Link href="/contact">Let’s Talk</Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-
-            <NavigationMenuViewport />
-          </NavigationMenu>
+            {/* Contact */}
+            <li>
+              <Link
+                href="/contact"
+                className="font-medium hover:text-primary"
+              >
+                Let’s Talk
+              </Link>
+            </li>
+          </ul>
         </nav>
       )}
 
-      {/* ================= MOBILE NAV ================= */}
+      {/* ================= MOBILE ================= */}
       {isMobile && (
         <>
           <nav className="container mx-auto flex h-16 items-center justify-between px-6">
@@ -169,39 +193,57 @@ export default function NavigationMenuDemo() {
                 alt="IT Sanjaal"
                 width={100}
                 height={40}
-                className="h-9 w-auto"
               />
             </Link>
 
             <button
-              ref={buttonRef}
               aria-label="Toggle menu"
-              onClick={() => setOpen((v) => !v)}
-              className="rounded-md p-2"
+              onClick={() => setMobileOpen((v) => !v)}
+              className="p-2"
             >
-              {open ? <X size={26} /> : <Menu size={26} />}
+              {mobileOpen ? <X size={26} /> : <Menu size={26} />}
             </button>
           </nav>
 
-          {open && (
-            <div ref={menuRef} className="border-t bg-white px-6 py-4">
-              <MobileLink href="/msexcel" title="MS Excel" setOpen={setOpen} />
-              <MobileLink href="/pythonn" title="Python" setOpen={setOpen} />
-              <MobileLink href="/ui" title="UI/UX Design" setOpen={setOpen} />
-              <MobileLink
+          {mobileOpen && (
+            <div
+              ref={navRef}
+              className="border-t bg-white px-6 py-4 space-y-3"
+            >
+              <MobileItem
+                href="/msexcel"
+                title="MS Excel"
+                desc="From basics to advanced Excel."
+              />
+              <MobileItem
+                href="/pythonn"
+                title="Python"
+                desc="Python with data analysis."
+              />
+              <MobileItem
+                href="/ui"
+                title="UI/UX Design"
+                desc="Figma & Canva based UI/UX."
+              />
+              <MobileItem
+                href="/bioinformatics"
+                title="Bioinformatics"
+                desc="Python for biodata analysis."
+              />
+              <MobileItem
                 href="/team/kiran"
                 title="Kiran Subedhi"
-                setOpen={setOpen}
+                desc="Legal advisor & advocate."
               />
-              <MobileLink
+              <MobileItem
                 href="/team/dibash"
                 title="Dibash Gautam"
-                setOpen={setOpen}
+                desc="Content writer & editor."
               />
-              <MobileLink
+              <MobileItem
                 href="/contact"
                 title="Let’s Talk"
-                setOpen={setOpen}
+                desc="Contact our team."
               />
             </div>
           )}
@@ -211,48 +253,66 @@ export default function NavigationMenuDemo() {
   );
 }
 
-/* ---------------- Reusable Components ---------------- */
+/* ================= COMPONENTS ================= */
 
-function ListItem({
-  title,
+function AnimatedDropdown({
+  open,
   children,
-  href,
 }: {
-  title: string;
+  open: boolean;
   children: React.ReactNode;
-  href: string;
 }) {
   return (
-    <li>
-      <NavigationMenuLink asChild>
-        <Link
-          href={href}
-          className="block rounded-md p-3 hover:bg-accent focus:bg-accent"
-        >
-          <div className="text-sm font-medium">{title}</div>
-          <p className="text-sm text-muted-foreground">{children}</p>
-        </Link>
-      </NavigationMenuLink>
-    </li>
+    <div
+      className={`absolute left-0 top-full mt-2 w-72 rounded-xl border bg-white shadow-lg
+      transition-all duration-200 ease-out
+      ${
+        open
+          ? "opacity-100 translate-y-0 scale-100 pointer-events-auto"
+          : "opacity-0 translate-y-2 scale-95 pointer-events-none"
+      }`}
+    >
+      {children}
+    </div>
   );
 }
 
-function MobileLink({
+function DropdownItem({
   href,
   title,
-  setOpen,
+  desc,
 }: {
   href: string;
   title: string;
-  setOpen: (v: boolean) => void;
+  desc: string;
 }) {
   return (
     <Link
       href={href}
-      onClick={() => setOpen(false)}
-      className="block border-b py-3 text-lg font-medium last:border-none"
+      className="block rounded-lg px-4 py-3 transition-colors hover:bg-accent focus:bg-accent"
     >
-      {title}
+      <div className="text-sm font-medium">{title}</div>
+      <p className="text-xs text-muted-foreground">{desc}</p>
+    </Link>
+  );
+}
+
+function MobileItem({
+  href,
+  title,
+  desc,
+}: {
+  href: string;
+  title: string;
+  desc: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className="block border-b py-3 last:border-none"
+    >
+      <div className="text-lg font-medium">{title}</div>
+      <p className="text-sm text-muted-foreground">{desc}</p>
     </Link>
   );
 }

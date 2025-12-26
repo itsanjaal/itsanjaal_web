@@ -40,7 +40,7 @@ export default function PythonProgrammingPage() {
         backgroundImage="/course/python-bg.jpg"
         image="/Python.png"
         pythonLogo="/python-logo.png"
-        title="Python for Everybody Specialization"
+        title="Python Programming fundamentals"
         description="Learn to program, analyze data, and visualize insights using Python."
         instructor={{
           name: "Som Tamang",
@@ -49,7 +49,7 @@ export default function PythonProgrammingPage() {
         enrollButtonText="Enroll for Rs. 1499/-"
         enrolledCount=""
         features={[
-          { title: "4.8", text: "217,459 reviews" },
+          { title: "4.9", text: "217,459 reviews" },
           { title: "5 course series", text: "In-depth knowledge of a subject" },
           { title: "Beginner level", text: "No prior experience required" },
           { title: "Flexible schedule", text: "Learn at your own pace" },

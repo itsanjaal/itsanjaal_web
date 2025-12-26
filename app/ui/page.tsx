@@ -40,7 +40,7 @@ export default function PythonProgrammingPage() {
         image="/ui_ux.png"
         backgroundImage="/course/python-bg.jpg"
         pythonLogo="/python-logo.png"
-        title="UI/UX for Everybody Specialization"
+        title="UI/UX beginner to Advanced"
         description="Learn to program, analyze data, and visualize insights using Python."
         instructor={{
           name: "Suman Sapkota",

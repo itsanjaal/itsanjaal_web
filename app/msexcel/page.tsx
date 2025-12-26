@@ -40,7 +40,7 @@ export default function PythonProgrammingPage() {
         backgroundImage="/course/python-bg.jpg"
         image="/Excel.png"
         pythonLogo="/python-logo.png"
-        title="Ms Excel Everybody Specialization"
+        title="Ms Excel Beginner to Advanced"
         description="Learn to analyze data, and visualize insights using Ms Excel."
         instructor={{
           name: "Ashmin Dhakal",

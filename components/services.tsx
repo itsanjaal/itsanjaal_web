@@ -87,7 +87,13 @@ export default function Services() {
   }, [])
 
   return (
-    <section id="services" ref={sectionRef} className="py-20 bg-white-50">
+    <section id="services" ref={sectionRef} className="py-20 bg-amber-50 bg-white-50"
+     style={{
+                  // transitionDelay: `${index * 100}ms`,
+                  backgroundImage: "url('/bg_services.jpg')",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16 px-4">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-4">
@@ -114,7 +120,7 @@ export default function Services() {
               <Card
                 key={index}
                 data-index={index}
-                className={`group hover:shadow-xl transition-all duration-500 border-0 bg-red hover:bg-gradient-to-br ${hoverBgClass} transform ${
+                className={`group hover:shadow-xl transition-all duration-500 border-0 bg-white hover:bg-gradient-to-br ${hoverBgClass} transform ${
                   isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}

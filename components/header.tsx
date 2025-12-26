@@ -6,31 +6,33 @@ import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
+type MenuType = "courses" | "team" | null;
+
 export default function Navbar() {
   const isMobile = useIsMobile();
 
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [coursesOpen, setCoursesOpen] = useState(false);
-  const [teamOpen, setTeamOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState<MenuType>(null);
 
   const navRef = useRef<HTMLDivElement>(null);
   const closeTimeout = useRef<NodeJS.Timeout | null>(null);
 
-  /* ---------------- Close helpers ---------------- */
+  /* ---------------- Helpers ---------------- */
+
+  const openMenu = (menu: MenuType) => {
+    if (closeTimeout.current) clearTimeout(closeTimeout.current);
+    setActiveMenu(menu);
+  };
+
+  const delayedClose = () => {
+    closeTimeout.current = setTimeout(() => {
+      setActiveMenu(null);
+    }, 180);
+  };
 
   const closeAll = () => {
+    setActiveMenu(null);
     setMobileOpen(false);
-    setCoursesOpen(false);
-    setTeamOpen(false);
-  };
-
-  const openMenu = (set: (v: boolean) => void) => {
-    if (closeTimeout.current) clearTimeout(closeTimeout.current);
-    set(true);
-  };
-
-  const delayedClose = (set: (v: boolean) => void) => {
-    closeTimeout.current = setTimeout(() => set(false), 150);
   };
 
   /* ---------------- Outside click + ESC ---------------- */
@@ -74,39 +76,33 @@ export default function Navbar() {
               alt="IT Sanjaal"
               width={140}
               height={60}
-              className="mix-blend-multiply"
+              className="h-25 w-auto mix-blend-multiply"
               priority
             />
           </Link>
 
           <ul className="ml-10 flex items-center gap-10">
-            {/* Featured Courses */}
+            {/* COURSES */}
             <li
               className="relative"
-              onMouseEnter={() => openMenu(setCoursesOpen)}
-              onMouseLeave={() => delayedClose(setCoursesOpen)}
+              onMouseEnter={() => openMenu("courses")}
+              onMouseLeave={delayedClose}
             >
-              <button
-                aria-expanded={coursesOpen}
-                className="flex items-center gap-1 font-medium hover:text-primary focus:outline-none"
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    setCoursesOpen((v) => !v);
-                  }
-                  if (e.key === "Escape") {
-                    setCoursesOpen(false);
-                  }
-                }}
-              >
-                Featured Courses
-                <ChevronDown
-                  className={`h-4 w-4 transition-transform duration-200 ${
-                    coursesOpen ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
+              <MenuButton
+                label="Featured Courses"
+                open={activeMenu === "courses"}
+                onClick={() =>
+                  setActiveMenu(
+                    activeMenu === "courses" ? null : "courses"
+                  )
+                }
+              />
 
-              <AnimatedDropdown open={coursesOpen}>
+              <AnimatedDropdown
+                open={activeMenu === "courses"}
+                onMouseEnter={() => openMenu("courses")}
+                onMouseLeave={delayedClose}
+              >
                 <DropdownItem
                   href="/msexcel"
                   title="MS Excel Class"
@@ -130,33 +126,25 @@ export default function Navbar() {
               </AnimatedDropdown>
             </li>
 
-            {/* Team */}
+            {/* TEAM */}
             <li
               className="relative"
-              onMouseEnter={() => openMenu(setTeamOpen)}
-              onMouseLeave={() => delayedClose(setTeamOpen)}
+              onMouseEnter={() => openMenu("team")}
+              onMouseLeave={delayedClose}
             >
-              <button
-                aria-expanded={teamOpen}
-                className="flex items-center gap-1 font-medium hover:text-primary focus:outline-none"
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    setTeamOpen((v) => !v);
-                  }
-                  if (e.key === "Escape") {
-                    setTeamOpen(false);
-                  }
-                }}
-              >
-                Team
-                <ChevronDown
-                  className={`h-4 w-4 transition-transform duration-200 ${
-                    teamOpen ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
+              <MenuButton
+                label="Team"
+                open={activeMenu === "team"}
+                onClick={() =>
+                  setActiveMenu(activeMenu === "team" ? null : "team")
+                }
+              />
 
-              <AnimatedDropdown open={teamOpen}>
+              <AnimatedDropdown
+                open={activeMenu === "team"}
+                onMouseEnter={() => openMenu("team")}
+                onMouseLeave={delayedClose}
+              >
                 <DropdownItem
                   href="/team/kiran"
                   title="Kiran Subedhi"
@@ -170,7 +158,7 @@ export default function Navbar() {
               </AnimatedDropdown>
             </li>
 
-            {/* Contact */}
+            {/* CONTACT */}
             <li>
               <Link
                 href="/contact"
@@ -206,10 +194,7 @@ export default function Navbar() {
           </nav>
 
           {mobileOpen && (
-            <div
-              ref={navRef}
-              className="border-t bg-white px-6 py-4 space-y-3"
-            >
+            <div className="border-t bg-white px-6 py-4 space-y-3">
               <MobileItem
                 href="/msexcel"
                 title="MS Excel"
@@ -253,19 +238,51 @@ export default function Navbar() {
   );
 }
 
-/* ================= COMPONENTS ================= */
+/* ================= SUB COMPONENTS ================= */
+
+function MenuButton({
+  label,
+  open,
+  onClick,
+}: {
+  label: string;
+  open: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      aria-haspopup="true"
+      aria-expanded={open}
+      onClick={onClick}
+      className="flex items-center gap-1 font-medium hover:text-primary"
+    >
+      {label}
+      <ChevronDown
+        className={`h-4 w-4 transition-transform duration-300 ${
+          open ? "rotate-180" : ""
+        }`}
+      />
+    </button>
+  );
+}
 
 function AnimatedDropdown({
   open,
   children,
+  onMouseEnter,
+  onMouseLeave,
 }: {
   open: boolean;
   children: React.ReactNode;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 }) {
   return (
     <div
-      className={`absolute left-0 top-full mt-2 w-72 rounded-xl border bg-white shadow-lg
-      transition-all duration-200 ease-out
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      className={`absolute left-0 top-full mt-3 w-72 rounded-xl border bg-white shadow-xl
+      origin-top transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]
       ${
         open
           ? "opacity-100 translate-y-0 scale-100 pointer-events-auto"
@@ -289,7 +306,7 @@ function DropdownItem({
   return (
     <Link
       href={href}
-      className="block rounded-lg px-4 py-3 transition-colors hover:bg-accent focus:bg-accent"
+      className="block rounded-lg px-4 py-3 transition hover:bg-accent"
     >
       <div className="text-sm font-medium">{title}</div>
       <p className="text-xs text-muted-foreground">{desc}</p>
@@ -307,10 +324,7 @@ function MobileItem({
   desc: string;
 }) {
   return (
-    <Link
-      href={href}
-      className="block border-b py-3 last:border-none"
-    >
+    <Link href={href} className="block border-b py-3 last:border-none">
       <div className="text-lg font-medium">{title}</div>
       <p className="text-sm text-muted-foreground">{desc}</p>
     </Link>

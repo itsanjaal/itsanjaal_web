@@ -88,12 +88,7 @@ export default function Services() {
 
   return (
     <section id="services" ref={sectionRef} className="py-20 bg-amber-50 bg-white-50"
-     style={{
-                  // transitionDelay: `${index * 100}ms`,
-                  backgroundImage: "url('/bg_services.jpg')",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}>
+     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16 px-4">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-4">

@@ -66,10 +66,10 @@ export default function ContactSection() {
                     <div>
                       <h4 className="font-semibold text-gray-900">Phone</h4>
                       <a
-                        href="tel:9863459299"
+                        href="tel:9851444004"
                         className="text-gray-600 hover:text-red-600 transition-colors"
                       >
-                        9863459299
+                        9851444004
                       </a>
                     </div>
                   </div>
@@ -85,12 +85,12 @@ export default function ContactSection() {
                     <div>
                       <h4 className="font-semibold text-gray-900">WhatsApp</h4>
                       <a
-                        href="https://wa.me/9819477357"
+                        href="https://wa.me/9851444004"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-gray-600 hover:text-red-700 transition-colors"
                       >
-                        +977-9819477357
+                        +977-9851444004
                       </a>
                     </div>
                   </div>

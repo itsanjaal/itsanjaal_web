@@ -107,21 +107,25 @@ export default function Navbar() {
                   href="/msexcel"
                   title="MS Excel Class"
                   desc="From basics to advanced Excel."
+                  onClick={closeAll}
                 />
                 <DropdownItem
                   href="/pythonn"
                   title="Python Programming"
                   desc="Python with data analysis."
+                  onClick={closeAll}
                 />
                 <DropdownItem
                   href="/ui"
                   title="UI/UX Design"
                   desc="Figma & Canva based UI/UX."
+                  onClick={closeAll}
                 />
                 <DropdownItem
                   href="/bioinformatics"
                   title="Bioinformatics"
                   desc="Python for biodata analysis."
+                  onClick={closeAll}
                 />
               </AnimatedDropdown>
             </li>
@@ -149,11 +153,13 @@ export default function Navbar() {
                   href="/team/kiran"
                   title="Kiran Subedhi"
                   desc="Legal advisor & advocate."
+                  onClick={closeAll}
                 />
                 <DropdownItem
                   href="/team/dibash"
                   title="Dibash Gautam"
                   desc="Content writer & editor."
+                  onClick={closeAll}
                 />
               </AnimatedDropdown>
             </li>
@@ -163,6 +169,7 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 className="font-medium hover:text-primary"
+                onClick={closeAll}
               >
                 Let’s Talk
               </Link>
@@ -175,7 +182,7 @@ export default function Navbar() {
       {isMobile && (
         <>
           <nav className="container mx-auto flex h-16 items-center justify-between px-6">
-            <Link href="/">
+            <Link href="/" onClick={closeAll}>
               <Image
                 src="/Logo.png"
                 alt="IT Sanjaal"
@@ -199,36 +206,43 @@ export default function Navbar() {
                 href="/msexcel"
                 title="MS Excel"
                 desc="From basics to advanced Excel."
+                onClick={closeAll}
               />
               <MobileItem
                 href="/pythonn"
                 title="Python"
                 desc="Python with data analysis."
+                onClick={closeAll}
               />
               <MobileItem
                 href="/ui"
                 title="UI/UX Design"
                 desc="Figma & Canva based UI/UX."
+                onClick={closeAll}
               />
               <MobileItem
                 href="/bioinformatics"
                 title="Bioinformatics"
                 desc="Python for biodata analysis."
+                onClick={closeAll}
               />
               <MobileItem
                 href="/team/kiran"
                 title="Kiran Subedhi"
                 desc="Legal advisor & advocate."
+                onClick={closeAll}
               />
               <MobileItem
                 href="/team/dibash"
                 title="Dibash Gautam"
                 desc="Content writer & editor."
+                onClick={closeAll}
               />
               <MobileItem
                 href="/contact"
                 title="Let’s Talk"
                 desc="Contact our team."
+                onClick={closeAll}
               />
             </div>
           )}
@@ -298,14 +312,17 @@ function DropdownItem({
   href,
   title,
   desc,
+  onClick,
 }: {
   href: string;
   title: string;
   desc: string;
+  onClick?: () => void;
 }) {
   return (
     <Link
       href={href}
+      onClick={onClick}
       className="block rounded-lg px-4 py-3 transition hover:bg-accent"
     >
       <div className="text-sm font-medium">{title}</div>
@@ -318,13 +335,19 @@ function MobileItem({
   href,
   title,
   desc,
+  onClick,
 }: {
   href: string;
   title: string;
   desc: string;
+  onClick?: () => void;
 }) {
   return (
-    <Link href={href} className="block border-b py-3 last:border-none">
+    <Link
+      href={href}
+      onClick={onClick}
+      className="block border-b py-3 last:border-none"
+    >
       <div className="text-lg font-medium">{title}</div>
       <p className="text-sm text-muted-foreground">{desc}</p>
     </Link>

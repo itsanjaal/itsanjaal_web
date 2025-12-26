@@ -114,18 +114,18 @@ export default function Footer() {
                   href="tel:9832362001"
                   className="text-black-400 hover:text-red transition-colors"
                 >
-                  +977-9863459299
+                  +977-9851444004
                 </a>
               </li>
               <li className="flex items-center space-x-2">
                 <MessageCircle className="h-4 w-4 text-red-700" />
                 <a
-                  href="https://wa.me/9819477357"
+                  href="https://wa.me/9851444004"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-black-700 hover:text-red-700 transition-colors"
                 >
-                  +977-9819477357
+                  +977-9851444004
                 </a>
               </li>
               <li className="flex items-center space-x-2">

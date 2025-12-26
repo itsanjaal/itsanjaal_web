@@ -148,6 +148,7 @@ export default function Values() {
         </div>
 
         {/* Goals Section */}
+        
         <div className="text-center mb-12 sm:mb-16 px-4">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-4">
             Our <span className="text-red-600">Goals</span>

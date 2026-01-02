@@ -1,4 +1,4 @@
-"use client";
+
 
 import Header from "@/components/header";
 import Footer from "@/components/footer";
@@ -7,6 +7,17 @@ import { CheckCircle, BookOpen, Calendar, Users } from "lucide-react";
 import PythonSpecializationCombined from "@/components/pythonclass/hero";
 import FAQAccordion from "@/components/pythonclass/Accordin";
 import InstructorProfile from "@/components/pythonclass/instructor";
+
+//For SEO
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Bioinformatics with Python Course",
+  description:
+    "Learn Bioinformatics with Python programming from scratch. Analyze biological data and build real-world projects.",
+  alternates: {
+    canonical: "/app/bioinformatics",
+  },
+};
 
 export default function PythonProgrammingPage() {
   const instructorQAs = [

@@ -110,13 +110,13 @@ export default function Navbar() {
                   onClick={closeAll}
                 />
                 <DropdownItem
-                  href="/pythonn"
+                  href="/python-programming"
                   title="Python Programming"
                   desc="Python with data analysis."
                   onClick={closeAll}
                 />
                 <DropdownItem
-                  href="/ui"
+                  href="/ui-ux-design"
                   title="UI/UX Design"
                   desc="Figma & Canva based UI/UX."
                   onClick={closeAll}
@@ -209,13 +209,13 @@ export default function Navbar() {
                 onClick={closeAll}
               />
               <MobileItem
-                href="/pythonn"
+                href="/python-programming"
                 title="Python"
                 desc="Python with data analysis."
                 onClick={closeAll}
               />
               <MobileItem
-                href="/ui"
+                href="/ui-ux-design"
                 title="UI/UX Design"
                 desc="Figma & Canva based UI/UX."
                 onClick={closeAll}

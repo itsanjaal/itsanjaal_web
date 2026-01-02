@@ -1,4 +1,4 @@
-"use client";
+
 
 import Header from "@/components/header";
 import Footer from "@/components/footer";
@@ -7,6 +7,18 @@ import { CheckCircle, BookOpen, Calendar, Users } from "lucide-react";
 import PythonSpecializationCombined from "@/components/pythonclass/hero";
 import FAQAccordion from "@/components/pythonclass/Accordin";
 import InstructorProfile from "@/components/pythonclass/instructor";
+//For SEO
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "MS Excel Training Course",
+  description:
+    "Learn MS Excel from basics to advanced level. Professional Excel training for students and professionals in Nepal.",
+  alternates: {
+    canonical: "/courses/ms-excel",
+  },
+};
+
 
 export default function PythonProgrammingPage() {
   const instructorQAs = [

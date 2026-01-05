@@ -27,8 +27,8 @@ export const metadata: Metadata = {
   // ✅ Proper favicon + icons setup
   icons: {
     icon: [
-      { url: "/favicon.png", type: "image/png" },
-      { url: "/favicon.ico", type: "image/x-icon" },
+      { url: "/favicon.png", sizes: '96x96',type: "image/png" },
+      { url: "/favicon.ico",sizes: '96x96', type: "image/x-icon" },
     ],
     shortcut: "/favicon.ico",
     apple: "/apple-touch-icon.png",

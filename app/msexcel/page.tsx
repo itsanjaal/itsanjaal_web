@@ -51,7 +51,6 @@ export default function PythonProgrammingPage() {
       <PythonSpecializationCombined
         backgroundImage="/course/python-bg.jpg"
         image="/Excel.png"
-        pythonLogo="/python-logo.png"
         title="Ms Excel Beginner to Advanced"
         description="Learn to analyze data, and visualize insights using Ms Excel."
         instructor={{

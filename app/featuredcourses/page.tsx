@@ -17,7 +17,7 @@ const FeaturedCourses = () => {
         </svg>
       ),
       buttonColor: "bg-red-600 hover:bg-red-700",
-      path: "/pythonn",
+      path: "/python-programming",
     },
     {
       id: 2,

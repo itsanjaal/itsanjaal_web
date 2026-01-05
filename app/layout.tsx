@@ -84,6 +84,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="manifest" href="/site.webmanifest" />
         {/* ✅ JSON-LD structured data */}
         <script
           type="application/ld+json"
@@ -93,7 +94,7 @@ export default function RootLayout({
               "@type": "Organization",
               name: "IT Sanjaal Pvt. Ltd.",
               url: "https://itsanjaal.com",
-              logo: "https://itsanjaal.com/Logo.png",
+              logo: "https://itsanjaal.com/favicon.ico",
               description:
                 "Leading digital innovation company specializing in web development, mobile apps, and AI solutions",
               telephone: "+977-9863459299",

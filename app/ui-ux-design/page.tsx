@@ -7,18 +7,18 @@ import { CheckCircle, BookOpen, Calendar, Users } from "lucide-react";
 import PythonSpecializationCombined from "@/components/pythonclass/hero";
 import FAQAccordion from "@/components/pythonclass/Accordin";
 import InstructorProfile from "@/components/pythonclass/instructor";
+
 //For SEO
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "MS Excel Training Course",
+  title: "UI/UX Design Course",
   description:
-    "Learn MS Excel from basics to advanced level. Professional Excel training for students and professionals in Nepal.",
+    "Learn UI/UX design with Figma. Build user-centered designs and real-world portfolios.",
   alternates: {
-    canonical: "/courses/ms-excel",
+    canonical: "/app/ui",
   },
 };
-
 
 export default function Page() {
   const instructorQAs = [
@@ -49,12 +49,13 @@ export default function Page() {
       {/* <Header /> */}
       {/* Hero Section */}
       <PythonSpecializationCombined
+        image="/ui_ux.png"
         backgroundImage="/course/python-bg.jpg"
-        image="/Excel.png"
-        title="Ms Excel Beginner to Advanced"
-        description="Learn to analyze data, and visualize insights using Ms Excel."
+        pythonLogo="/python-logo.png"
+        title="UI/UX beginner to Advanced"
+        description="Learn to program, analyze data, and visualize insights using Python."
         instructor={{
-          name: "Ashmin Dhakal",
+          name: "Suman Sapkota",
           imageUrl: "/team/instructors/charles.png",
         }}
         enrollButtonText="Enroll for Rs. 1499/-"
@@ -74,7 +75,7 @@ export default function Page() {
           <div className="bg-white p-6 rounded-xl shadow">
             <Calendar className="w-10 h-10 text-red-600" />
             <h3 className="text-xl font-semibold mt-3">Duration</h3>
-            <p className="mt-2 text-gray-700">4 Weeks • 1 hours per class</p>
+            <p className="mt-2 text-gray-700">4 Weeks • 1 hour per class</p>
           </div>
 
           <div className="bg-white p-6 rounded-xl shadow">
@@ -99,12 +100,12 @@ export default function Page() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {[
-              "Excel basics: interface, worksheets & data entry",
-              "Formulas & functions for calculations",
-              "Data cleaning, sorting & filtering techniques",
-              "PivotTables & PivotCharts for data analysis",
-              "Conditional formatting & data visualization",
-              "Practical Excel projects for real-world tasks",
+              "Foundations of UI/UX design principles",
+              "User research, personas & user journey mapping",
+              "Wireframing and low-fidelity prototyping",
+              "High-fidelity UI design using modern tools",
+              "Design systems, typography & color theory",
+              "Usability testing and real-world UI/UX projects",
             ].map((item, index) => (
               <div key={index} className="flex items-start space-x-3">
                 <CheckCircle className="text-red-600 w-6 h-6 mt-1" />
@@ -117,9 +118,9 @@ export default function Page() {
       {/* Instructor */}
       <div className="container mx-auto px-4 py-16">
         <InstructorProfile
-          name="Ashmin Dhakal"
-          title="Senior Ms Excel Instructor"
-          bio="Passionate about turning data into insights and helping students achieve their goals in visualization and analytics."
+          name="Suman Sapkota"
+          title="Senior UI/UX Instructor"
+          bio="Passionate about visuals into designs and helping students achieve their goals in Designing and prototyping."
           imageUrl="/suman.jpg"
           qas={instructorQAs}
         />

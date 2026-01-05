@@ -50,7 +50,7 @@ export default function PythonProgrammingPage() {
       <PythonSpecializationCombined
       image="/bioinformatics.png"
         backgroundImage="/course/python-bg.jpg"
-        pythonLogo="/python-logo.png"
+       
         title="Bioinformatics with Python"
         description="learn Python programming and biodata analysis from scratch to advanced level."
         instructor={{

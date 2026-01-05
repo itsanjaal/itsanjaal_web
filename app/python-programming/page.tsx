@@ -1,4 +1,16 @@
 
+//For SEO
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Python Programming Course",
+  description:
+    "Learn Python programming from scratch. Build real projects and start your career in software development.",
+  alternates: {
+    canonical: "/app/python-programming",
+  },
+};
+
 
 import Header from "@/components/header";
 import Footer from "@/components/footer";
@@ -7,17 +19,7 @@ import { CheckCircle, BookOpen, Calendar, Users } from "lucide-react";
 import PythonSpecializationCombined from "@/components/pythonclass/hero";
 import FAQAccordion from "@/components/pythonclass/Accordin";
 import InstructorProfile from "@/components/pythonclass/instructor";
-//For SEO
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "MS Excel Training Course",
-  description:
-    "Learn MS Excel from basics to advanced level. Professional Excel training for students and professionals in Nepal.",
-  alternates: {
-    canonical: "/courses/ms-excel",
-  },
-};
 
 
 export default function Page() {
@@ -50,17 +52,17 @@ export default function Page() {
       {/* Hero Section */}
       <PythonSpecializationCombined
         backgroundImage="/course/python-bg.jpg"
-        image="/Excel.png"
-        title="Ms Excel Beginner to Advanced"
-        description="Learn to analyze data, and visualize insights using Ms Excel."
+        image="/Python.png"
+        title="Python Programming fundamentals"
+        description="Learn to program, analyze data, and visualize insights using Python."
         instructor={{
-          name: "Ashmin Dhakal",
+          name: "Som Tamang",
           imageUrl: "/team/instructors/charles.png",
         }}
         enrollButtonText="Enroll for Rs. 1499/-"
         enrolledCount=""
         features={[
-          { title: "4.8", text: "217,459 reviews" },
+          { title: "4.9", text: "217,459 reviews" },
           { title: "5 course series", text: "In-depth knowledge of a subject" },
           { title: "Beginner level", text: "No prior experience required" },
           { title: "Flexible schedule", text: "Learn at your own pace" },
@@ -74,7 +76,7 @@ export default function Page() {
           <div className="bg-white p-6 rounded-xl shadow">
             <Calendar className="w-10 h-10 text-red-600" />
             <h3 className="text-xl font-semibold mt-3">Duration</h3>
-            <p className="mt-2 text-gray-700">4 Weeks • 1 hours per class</p>
+            <p className="mt-2 text-gray-700">6 Weeks • 1.5 hours per class</p>
           </div>
 
           <div className="bg-white p-6 rounded-xl shadow">
@@ -99,12 +101,12 @@ export default function Page() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {[
-              "Excel basics: interface, worksheets & data entry",
-              "Formulas & functions for calculations",
-              "Data cleaning, sorting & filtering techniques",
-              "PivotTables & PivotCharts for data analysis",
-              "Conditional formatting & data visualization",
-              "Practical Excel projects for real-world tasks",
+              "Python basics, variables, loops and functions",
+              "Working with files, error handling & OOP in Python",
+              "NumPy for numerical computing",
+              "Pandas for data manipulation and cleaning",
+              "Data visualization using Matplotlib & Seaborn",
+              "Real-world mini data analysis projects",
             ].map((item, index) => (
               <div key={index} className="flex items-start space-x-3">
                 <CheckCircle className="text-red-600 w-6 h-6 mt-1" />
@@ -117,9 +119,9 @@ export default function Page() {
       {/* Instructor */}
       <div className="container mx-auto px-4 py-16">
         <InstructorProfile
-          name="Ashmin Dhakal"
-          title="Senior Ms Excel Instructor"
-          bio="Passionate about turning data into insights and helping students achieve their goals in visualization and analytics."
+          name="Som Tamang"
+          title="Python,django and Data Analysis specialist"
+          bio="Passionate about turning data into insights and helping students achieve their goals in programming and analytics."
           imageUrl="/suman.jpg"
           qas={instructorQAs}
         />

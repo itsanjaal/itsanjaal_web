@@ -5,38 +5,36 @@ import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
 import "./globals.css";
 
-// ✅ IMPORTANT: Place favicon.ico inside the public/ folder
-// public/
-//   favicon.ico
-//   opengraph-image.jpg
-
 export const metadata: Metadata = {
+  metadataBase: new URL("https://itsanjaal.com"),
+
   title: "IT Sanjaal Pvt. Ltd. - Leading Digital Innovation Company",
   description:
     "Transform your business with our cutting-edge digital solutions. We specialize in web development, mobile apps, AI integration, and digital transformation services.",
-
-  // ✅ Add favicon icon metadata here
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/favicon.ico", // optional (for iOS)
-  },
 
   keywords:
     "web development, mobile apps, AI solutions, digital transformation, software development, tech consulting",
   authors: [{ name: "IT Sanjaal Pvt. Ltd." }],
   creator: "IT Sanjaal Pvt. Ltd.",
   publisher: "IT Sanjaal Pvt. Ltd.",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  metadataBase: new URL("https://itsanjaal.com"),
+
+  formatDetection: { email: false, address: false, telephone: false },
+
   alternates: {
     canonical: "/",
   },
 
+  // ✅ Proper favicon + icons setup
+  icons: {
+    icon: [
+      { url: "/favicon.png", type: "image/png" },
+      { url: "/favicon.ico", type: "image/x-icon" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+
+  // ✅ Open Graph SEO
   openGraph: {
     title: "IT Sanjaal Pvt. Ltd. - Leading Digital Innovation Company",
     description:
@@ -45,7 +43,7 @@ export const metadata: Metadata = {
     siteName: "IT Sanjaal Pvt. Ltd.",
     images: [
       {
-        url: "/Logo.png", // ✅ Use proper OG image instead of favicon
+        url: "/Logo.png",
         width: 1200,
         height: 630,
         alt: "IT Sanjaal Pvt. Ltd. Logo",
@@ -55,14 +53,16 @@ export const metadata: Metadata = {
     type: "website",
   },
 
+  // ✅ Twitter SEO
   twitter: {
     card: "summary_large_image",
     title: "IT Sanjaal Pvt. Ltd. - Leading Digital Innovation Company",
     description:
       "Transform your business with our cutting-edge digital solutions.",
-    images: ["/Logo.png"], // ✅ Use proper Twitter image instead of favicon
+    images: ["/Logo.png"],
   },
 
+  // ✅ Robots
   robots: {
     index: true,
     follow: true,
@@ -78,14 +78,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <head>
+        {/* Web Manifest */}
         <link rel="manifest" href="/site.webmanifest" />
-        {/* ✅ JSON-LD structured data */}
+
+        {/* ✅ JSON-LD (Fixed logo to PNG for Google) */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -94,9 +96,9 @@ export default function RootLayout({
               "@type": "Organization",
               name: "IT Sanjaal Pvt. Ltd.",
               url: "https://itsanjaal.com",
-              logo: "https://itsanjaal.com/favicon.ico",
+              logo: "https://itsanjaal.com/favicon.png",
               description:
-                "Leading digital innovation company specializing in web development, mobile apps, and AI solutions",
+                "Leading digital innovation company specializing in web development, mobile apps, and AI solutions.",
               telephone: "+977-9863459299",
               address: {
                 "@type": "PostalAddress",
@@ -110,7 +112,7 @@ export default function RootLayout({
           }}
         />
 
-        {/* ✅ Apply Geist fonts globally */}
+        {/* Apply Geist fonts */}
         <style>{`
           html {
             font-family: ${GeistSans.style.fontFamily};

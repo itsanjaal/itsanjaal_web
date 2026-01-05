@@ -50,8 +50,8 @@ export default function Page() {
       {/* Hero Section */}
       <PythonSpecializationCombined
         image="/ui_ux.png"
-        backgroundImage="/course/python-bg.jpg"
-        pythonLogo="/python-logo.png"
+        backgroundImage="#"
+        
         title="UI/UX beginner to Advanced"
         description="Learn to program, analyze data, and visualize insights using Python."
         instructor={{

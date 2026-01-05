@@ -49,7 +49,7 @@ export default function PythonProgrammingPage() {
       {/* Hero Section */}
       <PythonSpecializationCombined
       image="/bioinformatics.png"
-        backgroundImage="/course/python-bg.jpg"
+        backgroundImage="#"
        
         title="Bioinformatics with Python"
         description="learn Python programming and biodata analysis from scratch to advanced level."

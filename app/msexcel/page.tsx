@@ -49,7 +49,7 @@ export default function Page() {
       {/* <Header /> */}
       {/* Hero Section */}
       <PythonSpecializationCombined
-        backgroundImage="/course/python-bg.jpg"
+        backgroundImage="#"
         image="/Excel.png"
         title="Ms Excel Beginner to Advanced"
         description="Learn to analyze data, and visualize insights using Ms Excel."

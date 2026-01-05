@@ -51,7 +51,7 @@ export default function Page() {
       {/* <Header /> */}
       {/* Hero Section */}
       <PythonSpecializationCombined
-        backgroundImage="/course/#"
+        backgroundImage="#"
         image="/Python.png"
         title="Python Programming fundamentals"
         description="Learn to program, analyze data, and visualize insights using Python."

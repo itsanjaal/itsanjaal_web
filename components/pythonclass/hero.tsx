@@ -97,7 +97,7 @@ export default function PythonSpecializationCombined({
             </ul>
           </div>
 
-          <Button onClick={() => setOpenModal(true)} className="bg-[#306998] text-white px-5 py-2 sm:px-6 sm:py-3 mb-4">
+          <Button onClick={() => setOpenModal(true)} className="bg-red-600 text-white px-5 py-2 sm:px-6 sm:py-3 mb-4 hover:bg-white hover:text-red-600 hover:border-red-600 border-1 ">
             {enrollButtonText}
           </Button>
 

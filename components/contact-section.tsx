@@ -1,6 +1,7 @@
 "use client";
 
 import type React from "react";
+import { ToastContainer, toast,Bounce } from 'react-toastify';
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -24,6 +25,12 @@ export default function ContactSection() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+   const notify = () => toast("Message Sent Sucessfully!",{
+    theme: "colored red",
+    className: " !text-green-500",
+   });
+   const notifyError = () => toast("Error sending message!");
+
  const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
 
@@ -39,10 +46,12 @@ export default function ContactSection() {
     const data = await res.json();
 
     if (!res.ok) {
-      throw new Error(data.error || "Failed to send message");
+      // throw new Error(data.error || notifyError() );
+      notifyError();
     }
-
-    alert("Message sent successfully!");
+    else{notify();}
+    
+    // alert("Message sent successfully!");
 
     // Reset form
     setFormData({
@@ -56,6 +65,7 @@ export default function ContactSection() {
     alert("Something went wrong. Please try again.");
   }
 };
+
 
 
   return (
@@ -295,12 +305,19 @@ export default function ContactSection() {
                 </div>
 
                 <Button
+                  
                   type="submit"
                   className="w-full bg-red-700 hover:bg-red-700 text-white py-3 text-lg font-semibold group"
                 >
                   Send Message
                   <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
+                <ToastContainer 
+                
+                autoClose={3000}
+                transition={Bounce}
+                progressClassName="bg-red-500"
+                />
               </form>
             </CardContent>
           </Card>

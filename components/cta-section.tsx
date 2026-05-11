@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { ArrowRight, Sparkles, CheckCircle } from "lucide-react"
+import Link from "next/link"
 
 export default function CTASection() {
   return (
@@ -30,8 +31,8 @@ export default function CTASection() {
 
           <Card className="bg-white/10 backdrop-blur-md border-white/20 text-center">
             <CardContent className="p-4 sm:p-6">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Sparkles className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
+                <Sparkles className="h-6 w-6 sm:h-8 sm:w-8 text-destructive" />
               </div>
               <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Custom Solutions</h3>
               <p className="text-green-100 text-sm sm:text-base">
@@ -50,8 +51,13 @@ export default function CTASection() {
             </CardContent>
           </Card>
         </div>
-
-        <div className="text-center">
+        <div className="pt-1 flex justify-center">
+                <button className="group flex items-center gap-3 p-4 text-[11px] lg:text-[14px] tracking-[0.25em] uppercase border-0 bg-destructive cursor-pointer text-white dark:text-gray-100 dark:hover:text-red-500 transition-colors duration-300 disabled:opacity-40 disabled:cursor-not-allowed">
+                  <span className="block w-8 h-[1.5px] bg-current transition-all duration-300 group-hover:w-14" />
+                  <Link href="/contact">Start Your Project Today</Link>
+                </button>
+              </div>
+        {/* <div className="text-center">
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <Button
               size="lg"
@@ -67,7 +73,7 @@ export default function CTASection() {
               Schedule a Call
             </Button>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   )

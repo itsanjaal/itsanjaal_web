@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link"; 
+import Link from "next/link";
 import {
   Mail,
   Phone,
@@ -19,15 +19,16 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <Image
-                src="/Logo.png"
+                src="/favicon.png"
                 alt="Kodedristi Software"
-                width={60}
-                height={60}
-                className="w-20 h-20"
+                width={20}
+                height={20}
+                className="w-10 h-10"
               />
               <span className="text-xl font-bold text-red-700">
-                {" "}
-                IT Sanjaal{" "}
+                <div>
+                  <p className="text-xs italic">Simplify With</p>IT Sanjaal
+                </div>
               </span>
             </div>
             <p className="text-black-400 mb-6 max-w-md">
@@ -51,12 +52,12 @@ export default function Footer() {
               >
                 <Twitter className="h-5 w-5" />
               </a>
-              <a
+              {/* <a
                 href="#"
                 className="text-black-400 hover:text-red-700 transition-colors"
               >
                 <Github className="h-5 w-5" />
-              </a>
+              </a> */}
             </div>
           </div>
 
@@ -68,7 +69,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="#services"
+                  href="/services"
                   className="text-black-400 hover:text-red transition-colors"
                 >
                   Services
@@ -76,10 +77,10 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#projects"
+                  href="/contact"
                   className="text-black-400 hover:text-red transition-colors"
                 >
-                  Projects
+                  Contact Us
                 </Link>
               </li>
               <li>
@@ -87,7 +88,7 @@ export default function Footer() {
                   href="#values"
                   className="text-black-400 hover:text-red transition-colors"
                 >
-                  Values
+                  Services
                 </Link>
               </li>
               {/* <li>
@@ -136,7 +137,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="text-black-700 hover:underline hover:text-red-700 transition-colors"
                 >
-                 Buddhanagar ,Kathmandu,Nepal
+                  Buddhanagar ,Kathmandu,Nepal
                 </a>
               </li>
             </ul>

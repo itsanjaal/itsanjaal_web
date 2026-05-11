@@ -79,7 +79,7 @@ export default function Projects() {
   return (
     <section id="projects" ref={sectionRef} className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 sm:mb-16 px-4">
+        <div className="text-center mb-12 sm:mb-16 px-4 border border-destructive p-4">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black-900 mb-4">
             Our <span className="text-red-600">Remarkable Projects</span>
           </h2>

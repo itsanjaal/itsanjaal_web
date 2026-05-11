@@ -67,10 +67,10 @@ export default function Navbar() {
       {!isMobile && (
         <nav
           ref={navRef}
-          className="container mx-auto flex h-16 items-center px-6"
+          className="container mx-auto flex justify-between h-16 items-center px-6"
         >
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <div> <Link href="/" className="items-center">
             <Image
               src="/Logo.png"
               alt="IT Sanjaal"
@@ -79,22 +79,39 @@ export default function Navbar() {
               className="h-25 w-auto mix-blend-multiply"
               priority
             />
-          </Link>
+          </Link></div>
+         
 
           <ul className="ml-10 flex items-center gap-10">
+            <li className="p-4 content-center hover:text-secondary hover:bg-destructive hover:rounded-lg">
+              <Link
+                href="/services"
+                className="font-medium "
+                onClick={closeAll}
+              >
+                Services
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/it-career"
+                className="font-medium hover:text-primary"
+                onClick={closeAll}
+              >
+                IT Career & Placement Support
+              </Link>
+            </li>
             {/* COURSES */}
-            <li
+            {/* <li
               className="relative"
               onMouseEnter={() => openMenu("courses")}
               onMouseLeave={delayedClose}
             >
               <MenuButton
-                label="Featured Courses"
+                label="Our services"
                 open={activeMenu === "courses"}
                 onClick={() =>
-                  setActiveMenu(
-                    activeMenu === "courses" ? null : "courses"
-                  )
+                  setActiveMenu(activeMenu === "courses" ? null : "courses")
                 }
               />
 
@@ -104,8 +121,8 @@ export default function Navbar() {
                 onMouseLeave={delayedClose}
               >
                 <DropdownItem
-                  href="/msexcel"
-                  title="MS Excel Class"
+                  href="/web-development"
+                  title="Web Development"
                   desc="From basics to advanced Excel."
                   onClick={closeAll}
                 />
@@ -128,7 +145,7 @@ export default function Navbar() {
                   onClick={closeAll}
                 />
               </AnimatedDropdown>
-            </li>
+            </li> */}
 
             {/* TEAM */}
             <li
@@ -149,17 +166,18 @@ export default function Navbar() {
                 onMouseEnter={() => openMenu("team")}
                 onMouseLeave={delayedClose}
               >
-                <DropdownItem
+                {/* <DropdownItem
                   href="/team/kiran"
                   title="Kiran Subedhi"
                   desc="Legal advisor & advocate."
                   onClick={closeAll}
-                />
+                /> */}
                 <DropdownItem
                   href="/team/dibash"
                   title="Dibash Gautam"
                   desc="Content writer & editor."
                   onClick={closeAll}
+                  
                 />
               </AnimatedDropdown>
             </li>
@@ -174,6 +192,7 @@ export default function Navbar() {
                 Let’s Talk
               </Link>
             </li>
+            
           </ul>
         </nav>
       )}
@@ -183,12 +202,7 @@ export default function Navbar() {
         <>
           <nav className="container mx-auto flex h-16 items-center justify-between px-6">
             <Link href="/" onClick={closeAll}>
-              <Image
-                src="/Logo.png"
-                alt="IT Sanjaal"
-                width={100}
-                height={40}
-              />
+              <Image src="/Logo.png" alt="IT Sanjaal" width={100} height={40} />
             </Link>
 
             <button

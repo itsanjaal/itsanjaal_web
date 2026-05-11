@@ -4,6 +4,7 @@ import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
 import "./globals.css";
+import Navbar from "@/components/navbar";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://itsanjaal.com"),
@@ -27,8 +28,8 @@ export const metadata: Metadata = {
   // ✅ Proper favicon + icons setup
   icons: {
     icon: [
-      { url: "/favicon.png", sizes: '96x96',type: "image/png" },
-      { url: "/favicon.ico",sizes: '96x96', type: "image/x-icon" },
+      { url: "/favicon.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicon.ico", sizes: "96x96", type: "image/x-icon" },
     ],
     shortcut: "/favicon.ico",
     apple: "/apple-touch-icon.png",
@@ -123,8 +124,9 @@ export default function RootLayout({
       </head>
 
       <body>
-        <Header />
-        <main>{children}</main>
+        {/* <Header /> */}
+        <Navbar />
+        <main className="pt-20">{children}</main>
         <Footer />
       </body>
     </html>

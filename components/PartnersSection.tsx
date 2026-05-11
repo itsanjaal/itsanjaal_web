@@ -19,8 +19,8 @@ const PARTNERS = [
   },
   {
     name: "EduHub Global",
-    logo: "/partners/eduhub.png",    // move to /public/logos/partners/eduhub-global.png
-    href: "https://www.eduhubglobal.com",  // update if different
+    logo: "/partners/eduhub.png", // move to /public/logos/partners/eduhub-global.png
+    href: "https://www.eduhubglobal.com", // update if different
   },
   // Add more partners here:
   // { name: "Partner Name", logo: "/logos/partners/name.svg", href: "https://..." },
@@ -31,7 +31,15 @@ const REPS = 6;
 const TRACK = Array.from({ length: REPS }, () => PARTNERS).flat();
 
 /* ─── Single logo card ───────────────────────────────────── */
-function PartnerCard({ name, logo, href }: { name: string; logo: string; href: string }) {
+function PartnerCard({
+  name,
+  logo,
+  href,
+}: {
+  name: string;
+  logo: string;
+  href: string;
+}) {
   return (
     <a
       href={href}
@@ -62,8 +70,14 @@ function PartnerCard({ name, logo, href }: { name: string; logo: string; href: s
           height={56}
           className="max-h-14 w-auto object-contain transition-all duration-350"
           style={{ filter: "grayscale(1) opacity(0.6)" }}
-          onMouseEnter={e => ((e.currentTarget as HTMLImageElement).style.filter = "grayscale(0) opacity(1)")}
-          onMouseLeave={e => ((e.currentTarget as HTMLImageElement).style.filter = "grayscale(1) opacity(0.6)")}
+          onMouseEnter={(e) =>
+            ((e.currentTarget as HTMLImageElement).style.filter =
+              "grayscale(0) opacity(1)")
+          }
+          onMouseLeave={(e) =>
+            ((e.currentTarget as HTMLImageElement).style.filter =
+              "grayscale(1) opacity(0.6)")
+          }
         />
       </div>
 
@@ -109,8 +123,8 @@ export default function PartnersSection() {
           className="font-mono leading-relaxed text-gray-500 max-w-lg"
           style={{ fontSize: "clamp(11px,1.1vw,13px)" }}
         >
-          We collaborate with forward-thinking organisations who share our commitment to
-          excellence and innovation.
+          We collaborate with forward-thinking organisations who share our
+          commitment to excellence and innovation.
         </p>
         <div className="w-8 h-0.5 bg-red-600 mt-5" />
       </div>
@@ -132,11 +146,13 @@ export default function PartnersSection() {
           <div
             className="flex w-max"
             style={{ animation: "pt-marquee 28s linear infinite" }}
-            onMouseEnter={e =>
-              ((e.currentTarget as HTMLElement).style.animationPlayState = "paused")
+            onMouseEnter={(e) =>
+              ((e.currentTarget as HTMLElement).style.animationPlayState =
+                "paused")
             }
-            onMouseLeave={e =>
-              ((e.currentTarget as HTMLElement).style.animationPlayState = "running")
+            onMouseLeave={(e) =>
+              ((e.currentTarget as HTMLElement).style.animationPlayState =
+                "running")
             }
           >
             {TRACK.map((p, i) => (
@@ -152,7 +168,8 @@ export default function PartnersSection() {
           className="font-mono uppercase text-gray-400"
           style={{ fontSize: "clamp(8px,0.9vw,10px)", letterSpacing: "0.22em" }}
         >
-          {PARTNERS.length} trusted partner{PARTNERS.length !== 1 ? "s" : ""} & growing
+          {PARTNERS.length} trusted partner
+          {Number(PARTNERS.length) !== 1 ? "s" : ""} & growing
         </span>
         <a
           href="/contact"

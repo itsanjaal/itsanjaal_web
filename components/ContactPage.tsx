@@ -194,17 +194,21 @@ export default function ContactPage() {
         background: "#fff",
         color: "#111",
         border: "1.5px solid #b91c1c",
-      },
-      progressStyle: { background: "#b91c1c" },
+        // This targets the CSS variable used by the library for the progress bar
+        "--toastify-color-progress-light": "#b91c1c",
+        "--toastify-color-progress-dark": "#b91c1c",
+      } as React.CSSProperties,
     });
   const notifyError = () =>
     toast("Something went wrong. Please try again.", {
       style: {
         background: "#fff",
         color: "#111",
-        border: "1.5px solid #ef4444",
-      },
-      progressStyle: { background: "#ef4444" },
+        border: "1.5px solid #b91c1c",
+        // This targets the CSS variable used by the library for the progress bar
+        "--toastify-color-progress-light": "#b91c1c",
+        "--toastify-color-progress-dark": "#b91c1c",
+      } as React.CSSProperties,
     });
 
   const validate = () => {
@@ -323,7 +327,6 @@ export default function ContactPage() {
             </p>
           </div>
         </div>
-
       </section>
 
       {/* ── INFO CARDS ── */}

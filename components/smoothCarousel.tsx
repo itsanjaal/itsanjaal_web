@@ -28,6 +28,15 @@ const slides = [
 
 export default function ForegroundThreadCarousel() {
   const [index, setIndex] = useState(0);
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
+
+  // Handle Screen Resize for Responsive Animations
+  useEffect(() => {
+    const checkScreen = () => setIsLargeScreen(window.innerWidth >= 1024);
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -41,12 +50,7 @@ export default function ForegroundThreadCarousel() {
   const rightZoneDelay = 1.8;
 
   return (
-    // Changed: p-6 on mobile, p-12 on tablet, p-26 on desktop. Added h-dvh for better mobile height.
     <div className="relative mx-auto w-full lg:w-screen min-h-screen h-dvh flex items-center justify-center overflow-hidden bg-white p-6 md:p-12 lg:pb-40">
-      {/* 
-        The SVG Thread - Hidden on small mobile to reduce visual noise, 
-        transformed for a vertical flow if desired (kept horizontal here for simplicity).
-      */}
       <svg
         viewBox="0 0 1000 400"
         className="absolute inset-0 w-full h-full pointer-events-none z-10 opacity-40 md:opacity-100"
@@ -68,27 +72,27 @@ export default function ForegroundThreadCarousel() {
       <AnimatePresence mode="wait">
         <motion.div
           key={index}
-          // Changed: flex-col-reverse (text bottom) on mobile, lg:flex-row on desktop
-          // Added items-center for mobile centering
           className={`relative w-full max-w-7xl h-full flex flex-col-reverse lg:items-center justify-center lg:justify-between gap-10 lg:gap-20 ${
             isEven ? "lg:flex-row" : "lg:flex-row-reverse"
           }`}
         >
           {/* Description Block */}
           <motion.div
-            initial={{ opacity: 0, y: 20, lg: { x: isEven ? -30 : 30, y: 0 } }}
-            animate={{ opacity: 1, y: 0, lg: { x: 0 } }}
+            initial={{
+              opacity: 0,
+              y: isLargeScreen ? 0 : 20,
+              x: isLargeScreen ? (isEven ? -30 : 30) : 0,
+            }}
+            animate={{ opacity: 1, y: 0, x: 0 }}
             transition={{
               delay: isEven ? leftZoneDelay : rightZoneDelay,
               duration: 0.7,
             }}
-            // Changed: w-full on mobile, w-1/2 on desktop. Text-center on mobile.
             className="w-full lg:w-1/2 space-y-4 lg:space-y-6 z-20 text-center lg:text-left"
           >
             <span className="inline-block px-4 py-1 rounded-full bg-rose-100 text-rose-700 font-semibold text-xs lg:text-sm">
               Slide {index + 1}
             </span>
-            {/* Responsive text sizes: text-4xl on mobile, 6xl on desktop */}
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-zinc-950 leading-tight tracking-tighter">
               {slides[index].title}
             </h2>
@@ -108,7 +112,6 @@ export default function ForegroundThreadCarousel() {
             }}
             className="w-full lg:w-1/2 z-20"
           >
-            {/* Adjusted aspect ratio for mobile to keep it compact */}
             <div className="relative aspect-square md:aspect-video lg:aspect-[5/4] overflow-hidden rounded-2xl lg:rounded-[30px] shadow-2xl lg:shadow-3xl shadow-rose-950/10">
               <img
                 src={slides[index].image}
@@ -120,7 +123,7 @@ export default function ForegroundThreadCarousel() {
         </motion.div>
       </AnimatePresence>
 
-      {/* Manual Navigation - Centered for all screens */}
+      {/* Manual Navigation */}
       <div className="absolute bottom-8 lg:bottom-10 left-1/2 -translate-x-1/2 lg:left-16 lg:translate-x-0 flex items-center gap-3 z-30">
         {slides.map((_, i) => (
           <button

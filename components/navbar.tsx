@@ -21,7 +21,7 @@ export default function Navbar() {
   const getLinkStyle = (href: string) => {
     const isActive =
       pathname === href || (href !== "/" && pathname.startsWith(href));
-    return `px-2 py-2 rounded-lg transition-all whitespace-nowrap ${
+    return `px-2 py-2 transition-all whitespace-nowrap ${
       isActive
         ? "bg-destructive text-white shadow-md"
         : "text-gray-600 hover:bg-gray-300"
@@ -65,7 +65,7 @@ export default function Navbar() {
         <div className="hidden md:block flex-shrink-0 md:mr-2 lg:mr-0">
           <Link 
             href="/contact" 
-            className="bg-destructive text-white px-4 py-2 lg:px-6 lg:py-3 hover:scale-105 transition-transform duration-300 inline-block whitespace-nowrap md:text-sm lg:text-base"
+            className="bg-white border-2 border-destructive text-destructive px-4 py-2 lg:px-6 lg:py-3 hover:scale-105 transition-transform duration-300 inline-block whitespace-nowrap md:text-sm lg:text-lg hover:bg-destructive hover:text-white"
           >
             Say Hello
           </Link>
@@ -74,7 +74,7 @@ export default function Navbar() {
         {/* Mobile Toggle Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 text-gray-600 hover:bg-gray-100 rounded-md"
+          className="md:hidden p-2 text-gray-600 hover:bg-gray-100"
         >
           <span className="text-2xl">{isOpen ? "✕" : "☰"}</span>
         </button>
@@ -99,7 +99,7 @@ export default function Navbar() {
             <Link 
               href="/contact"
               onClick={() => setIsOpen(false)}
-              className="block w-full text-center bg-destructive text-white p-3 rounded-lg"
+              className="block w-full bg-white border-2 border-destructive text-destructive text-center hover:bg-red hover:text-white p-3"
             >
               Say Hello
             </Link>

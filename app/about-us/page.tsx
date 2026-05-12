@@ -1,66 +1,12 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import {
-  Code2,
-  Smartphone,
-  GraduationCap,
-  Microscope,
-  Quote,
-  Users,
-  Briefcase,
-  Award,
-  Globe,
-  CheckCircle2,
-} from "lucide-react";
+import { Quote } from "lucide-react";
 import Link from "next/link";
+import { TeamSlider } from "@/components/teamSlider";
 
 const AboutPage = () => {
-  const team = [
-    {
-      name: "Som Bahadur Tamang",
-      role: "Lead Developer",
-      quote:
-        "I don't just care that the button works; I care that the data it sends is secure, the response is instant, and the team that built it is proud of the code.",
-      img: "/team/t1.webp",
-    },
-    {
-      name: "Pragya Khatiwada",
-      role: "Frontend Developer",
-      quote:
-        "In the beginning, you feel like you're just moving boxes. Eventually, you realize you're building the window through which the world sees the data.",
-      img: "/team/t2.webp",
-    },
-    {
-      name: "Robin Sharma",
-      role: "Senior Advisor",
-      quote: "Genius is 1% talent and 99% percent hard work",
-      img: "/team/t3.webp",
-    },
-    {
-      name: "Gaurav Deol",
-      role: "Devops and Backend Developer",
-      quote:
-        "Efficiency isn't just about speed; it's about making the most complex operation in the world feel like a single, effortless heartbeat to the user.",
-      img: "team/t4.webp",
-    },
-    {
-      name: "Rakshya Bastola",
-      role: "Mobile App Developer",
-      quote: "On a desktop, a crash is a tab. On mobile, a crash is a betrayal. Your code is the last thing a user sees before they decide to delete you forever.",
-      img: "team/t4.webp",
-    },
-    {
-      name: "Rupesh Chaulagain",
-      role: "Senior Backend Developer",
-      quote:
-        "A senior developer doesn't just build the bridge; they design the way it fails so the city doesn't go dark.",
-      img: "team/t4.webp",
-    },
-  ];
-
   return (
     <div className="bg-white min-h-screen selection:bg-red-100 overflow-x-hidden">
       {/* --- HERO SECTION --- */}
@@ -77,8 +23,8 @@ const AboutPage = () => {
             Simplify With <span className="text-[#FF3131]">IT Sanjaal</span>
           </h1>
           <p className="text-gray-600 text-xl leading-relaxed max-w-md">
-            At itsanjaal.com, our mission is to simplify the digital landscape.
-            We specialize in transforming complex challenges into streamlined IT
+            At IT Sanjaal, our mission is to simplify the digital landscape. We
+            specialize in transforming complex challenges into streamlined IT
             solutions, making work effortless for businesses ranging from local
             consultancies to specialized Bio-IT ventures. By focusing on
             intuitive web development and efficient CRM systems, we bridge the
@@ -144,7 +90,7 @@ const AboutPage = () => {
           <div className="md:col-span-2">
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border-2 border-slate-700 shadow-2xl">
               <Image
-                src="/team/director.jpeg"
+                src="/team/mng-director.jpg"
                 alt="Director"
                 fill
                 className="object-cover"
@@ -276,7 +222,7 @@ const AboutPage = () => {
       </section> */}
 
       {/* --- CONTINUOUS TEAM SLIDER --- */}
-      <section className="py-32 bg-white overflow-hidden">
+      {/* <section className="py-32 bg-white overflow-hidden">
         <div className="text-center mb-20 space-y-4">
           <h2 className="text-4xl font-black uppercase text-slate-900 tracking-tighter">
             Our Core Team
@@ -321,7 +267,8 @@ const AboutPage = () => {
             ))}
           </motion.div>
         </div>
-      </section>
+      </section> */}
+      <TeamSlider />
     </div>
   );
 };

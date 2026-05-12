@@ -6,21 +6,21 @@ const slides = [
   {
     id: 1,
     title: "Innovative Design",
-    desc: "The thread flows seamlessly, guiding you through our minimalist design philosophy.",
+    desc: "Where aesthetics meet intuition. We craft pixel-perfect interfaces designed to captivate your users and simplify complex digital journeys.",
     image:
       "https://images.unsplash.com/photo-1587440871875-191322ee64b0?q=80&w=800",
   },
   {
     id: 2,
     title: "Agile Development",
-    desc: "Speed and precision define our process, keeping your project on the cutting edge.",
+    desc: "Speed without compromise. Our iterative approach ensures rapid delivery, constant feedback, and the flexibility to pivot as your market evolves.",
     image:
       "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800",
   },
   {
     id: 3,
     title: "Future Scale",
-    desc: "We build with tomorrow in mind, ensuring your infrastructure grows with your vision.",
+    desc: "Built for what’s next. We engineer robust, cloud-native architectures that handle today’s traffic and effortlessly expand to meet tomorrow’s global demands.",
     image:
       "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800",
   },

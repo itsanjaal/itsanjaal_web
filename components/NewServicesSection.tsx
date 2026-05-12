@@ -26,8 +26,8 @@ export default function ServicesSection() {
   return (
     <section id="services" className="relative py-28 bg-white overflow-hidden">
       {/* Background decorative elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-red-50 blur-3xl opacity-60 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-red-50 blur-2xl opacity-40 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-96 h-96  bg-red-50 blur-3xl opacity-60 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-64 h-64  bg-red-50 blur-2xl opacity-40 pointer-events-none" />
 
       {/* Grid lines */}
       <div
@@ -69,7 +69,7 @@ export default function ServicesSection() {
               onMouseLeave={() => setHovered(null)}
             >
               <div
-                className="relative overflow-hidden rounded-3xl border border-red-100 bg-white p-10 card-hover cursor-pointer"
+                className="relative overflow-hidden border border-red-100 bg-white p-10 card-hover cursor-pointer"
                 style={{
                   background:
                     hovered === service.slug
@@ -80,7 +80,7 @@ export default function ServicesSection() {
               >
                 {/* Top accent line */}
                 <div
-                  className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#e51a1a] to-[#ff6b6b] rounded-t-3xl"
+                  className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#e51a1a] to-[#ff6b6b]"
                   style={{
                     transform:
                       hovered === service.slug ? "scaleX(1)" : "scaleX(0)",
@@ -101,7 +101,7 @@ export default function ServicesSection() {
 
                 {/* Icon with floating animation on hover */}
                 <div
-                  className={`mb-8 w-28 h-28 rounded-2xl flex items-center justify-center transition-all duration-500 ${
+                  className={`mb-8 w-28 h-28 flex items-center justify-center transition-all duration-500 ${
                     hovered === service.slug
                       ? "bg-red-50 scale-105"
                       : "bg-gray-50"
@@ -136,13 +136,13 @@ export default function ServicesSection() {
                     {service.features.slice(0, 4).map((f) => (
                       <span
                         key={f}
-                        className="px-3 py-1 bg-red-50 text-[#c11212] text-xs font-medium rounded-full"
+                        className="px-3 py-1 bg-red-50 text-[#c11212] text-xs font-medium "
                       >
                         {f}
                       </span>
                     ))}
                     {service.features.length > 4 && (
-                      <span className="px-3 py-1 bg-gray-100 text-gray-500 text-xs font-medium rounded-full">
+                      <span className="px-3 py-1 bg-gray-100 text-gray-500 text-xs font-medium ">
                         +{service.features.length - 4} more
                       </span>
                     )}
@@ -174,7 +174,7 @@ export default function ServicesSection() {
         </div>
 
         {/* Bottom CTA strip */}
-        <div className="mt-16 rounded-3xl bg-[#e51a1a] p-10 md:p-14 flex flex-col md:flex-row items-center justify-between gap-6 overflow-hidden relative">
+        <div className="mt-16 bg-[#e51a1a] p-10 md:p-14 flex flex-col md:flex-row items-center justify-between gap-6 overflow-hidden relative">
           <div
             className="absolute inset-0 pointer-events-none"
             style={{

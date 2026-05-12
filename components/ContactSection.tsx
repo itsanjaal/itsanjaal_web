@@ -104,7 +104,11 @@ function ContactItem({ label, value, href, ext, d, d2 }: (typeof CONTACTS)[0]) {
       <div className="flex-1 min-w-0">
         <p
           className="font-mono uppercase mb-0.5"
-          style={{ fontSize: "9px", letterSpacing: "0.22em", color: "#b91c1c" }}
+          style={{
+            fontSize: "12px",
+            letterSpacing: "0.22em",
+            color: "#b91c1c",
+          }}
         >
           {label}
         </p>
@@ -237,7 +241,7 @@ export default function ContactSection() {
             <div className="w-6 h-0.5 bg-red-600 flex-shrink-0" />
             <span
               className="font-mono uppercase tracking-[0.32em] text-red-600"
-              style={{ fontSize: "clamp(9px,1vw,11px)" }}
+              style={{ fontSize: "clamp(12px,1vw,11px)" }}
             >
               Let's talk
             </span>
@@ -267,7 +271,7 @@ export default function ContactSection() {
           <div className="bg-white pt-2 pb-10 lg:pr-12">
             <p
               className="font-mono uppercase tracking-[0.3em] text-red-600 mb-5"
-              style={{ fontSize: "9px" }}
+              style={{ fontSize: "12px" }}
             >
               Contact Information
             </p>
@@ -281,7 +285,7 @@ export default function ContactSection() {
             <div className="mt-8">
               <p
                 className="font-mono uppercase tracking-[0.28em] text-red-600 mb-4"
-                style={{ fontSize: "9px" }}
+                style={{ fontSize: "12px" }}
               >
                 Follow Us
               </p>
@@ -337,7 +341,7 @@ export default function ContactSection() {
           <div className="bg-white pt-2 pb-10 lg:pl-12">
             <p
               className="font-mono uppercase tracking-[0.3em] text-red-600 mb-5"
-              style={{ fontSize: "9px" }}
+              style={{ fontSize: "12px" }}
             >
               Send a Message
             </p>
@@ -347,7 +351,7 @@ export default function ContactSection() {
                 <div>
                   <label
                     className="font-mono uppercase tracking-[0.28em] text-red-600 block mb-2"
-                    style={{ fontSize: "9px" }}
+                    style={{ fontSize: "12px" }}
                   >
                     Full Name *
                   </label>
@@ -359,7 +363,7 @@ export default function ContactSection() {
                     className={inputCls}
                   />
                   {errors.name && (
-                    <p className="font-mono text-[9px] text-red-500 mt-1">
+                    <p className="font-mono text-[12px] text-red-500 mt-1">
                       {errors.name}
                     </p>
                   )}
@@ -367,7 +371,7 @@ export default function ContactSection() {
                 <div>
                   <label
                     className="font-mono uppercase tracking-[0.28em] text-red-600 block mb-2"
-                    style={{ fontSize: "9px" }}
+                    style={{ fontSize: "12px" }}
                   >
                     Phone
                   </label>
@@ -384,7 +388,7 @@ export default function ContactSection() {
               <div>
                 <label
                   className="font-mono uppercase tracking-[0.28em] text-red-600 block mb-2"
-                  style={{ fontSize: "9px" }}
+                  style={{ fontSize: "12px" }}
                 >
                   Email Address *
                 </label>
@@ -396,7 +400,7 @@ export default function ContactSection() {
                   className={inputCls}
                 />
                 {errors.email && (
-                  <p className="font-mono text-[9px] text-red-500 mt-1">
+                  <p className="font-mono text-[12px] text-red-500 mt-1">
                     {errors.email}
                   </p>
                 )}
@@ -405,7 +409,7 @@ export default function ContactSection() {
               <div>
                 <label
                   className="font-mono uppercase tracking-[0.28em] text-red-600 block mb-2"
-                  style={{ fontSize: "9px" }}
+                  style={{ fontSize: "12px" }}
                 >
                   Message *
                 </label>
@@ -420,14 +424,14 @@ export default function ContactSection() {
                 />
                 <div className="flex justify-between mt-1">
                   {errors.message ? (
-                    <p className="font-mono text-[9px] text-red-500">
+                    <p className="font-mono text-[12px] text-red-500">
                       {errors.message}
                     </p>
                   ) : (
                     <span />
                   )}
                   <span
-                    className="font-mono text-[9px] transition-colors duration-200"
+                    className="font-mono text-[12px] transition-colors duration-200"
                     style={{ color: chars > 900 ? "#b91c1c" : "#d1d5db" }}
                   >
                     {chars} / 1000
@@ -442,7 +446,7 @@ export default function ContactSection() {
                   className="group flex items-center gap-3 font-mono uppercase text-white border-0 cursor-pointer transition-all duration-200 disabled:opacity-50"
                   style={{
                     background: "#b91c1c",
-                    fontSize: "clamp(9px,1vw,11px)",
+                    fontSize: "clamp(12px,1vw,11px)",
                     letterSpacing: "0.25em",
                     padding: "clamp(12px,1.5vw,15px) clamp(22px,2.5vw,32px)",
                   }}
@@ -503,7 +507,7 @@ export default function ContactSection() {
                   <span
                     className="font-mono flex items-center gap-2 text-gray-400"
                     style={{
-                      fontSize: "clamp(9px,1vw,11px)",
+                      fontSize: "clamp(12px,1vw,11px)",
                       letterSpacing: "0.12em",
                     }}
                   >

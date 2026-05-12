@@ -155,16 +155,16 @@ export default function FridayCulture() {
         {/* LEFT — Photo with red overlay */}
         <div className="relative overflow-hidden min-h-[280px] lg:min-h-0 group bg-red-600">
           <Image
-            src="/images/friday-session.jpg"
+            src="/tech-for-people.svg"
             alt="Team Friday Tech-for-People session"
             fill
-            className="object-cover transition-all duration-[7000ms] ease-in-out group-hover:scale-105"
-            style={{ filter: "grayscale(1) contrast(1.1)", mixBlendMode: "multiply", opacity: 0.45 }}
+            className="object-contain transition-all duration-[7000ms] ease-in-out group-hover:scale-105"
+            // style={{ filter: "grayscale(1) contrast(1.1)", mixBlendMode: "multiply", opacity: 0.45 }}
             priority
           />
           {/* Red gradient overlay */}
-          <div className="absolute inset-0"
-            style={{ background: "linear-gradient(135deg,rgba(185,28,28,0.88) 0%,rgba(120,10,10,0.96) 100%)" }} />
+          {/* <div className="absolute inset-0"
+            style={{ background: "linear-gradient(135deg,rgba(185,28,28,0.88) 0%,rgba(120,10,10,0.96) 100%)" }} /> */}
 
           {/* Floating concept tags */}
           <div className="absolute inset-0 pointer-events-none">

@@ -11,6 +11,7 @@
 //   Images should ideally be square SVGs or PNGs with transparent backgrounds.
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 /* ─── Project data ───────────────────────────────────────── */
@@ -25,6 +26,7 @@ const PROJECTS = [
     desc: "Genomic variant analysis pipeline processing 10M+ reads per sample with real-time clinical report generation.",
     stack: ["Next.js", "Tailwind", "Typescript", "AWS"],
     logo: "/projects/p1.png", // ← replace with your logo
+    projectUrl: "https://www.eduhubglobal.com.au/",
   },
   {
     id: 2,
@@ -34,6 +36,7 @@ const PROJECTS = [
     desc: "High-conversion e-commerce platform with AI-powered recommendations, boosting revenue by 38% in 3 months.",
     stack: ["Django", "AWS", "Postgres"],
     logo: "projects/p2.png",
+    projectUrl: "https://www.healingdrivehomehealth.com/",
   },
   {
     id: 3,
@@ -43,6 +46,7 @@ const PROJECTS = [
     desc: "High-conversion e-commerce platform with AI-powered recommendations, boosting revenue by 38% in 3 months.",
     stack: ["Django", "AWS", "Postgres"],
     logo: "projects/p3.png",
+    projectUrl: "https://aestheticbrowsandlashes.com/",
   },
   {
     id: 4,
@@ -52,6 +56,7 @@ const PROJECTS = [
     desc: "High-conversion e-commerce platform with AI-powered recommendations, boosting revenue by 38% in 3 months.",
     stack: ["Next.js", "Stripe", "Postgres"],
     logo: "projects/p4.png",
+    projectUrl: "https://dhamalacapital.com/",
   },
 ] as const;
 
@@ -87,129 +92,130 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       className="relative overflow-hidden cursor-pointer bg-white dark:bg-black"
       style={{ aspectRatio: "4/3" }}
     >
-      {/* Subtle red tint on hover */}
-      <div
-        className="absolute inset-0 z-0 transition-opacity duration-400"
-        style={{
-          background: "rgba(185,28,28,0.025)",
-          opacity: hovered ? 1 : 0,
-        }}
-      />
-
-      {/* Index */}
-      <span
-        className="absolute top-3.5 left-4 z-10 font-mono text-[9px] lg:text-[14px] tracking-[0.2em] text-red-600 transition-opacity duration-300"
-        style={{ opacity: hovered ? 0 : 0.4 }}
-      >
-        {String(index + 1).padStart(2, "0")}
-      </span>
-
-      {/* Year */}
-      <span
-        className="absolute top-3.5 right-4 z-10 font-mono text-[9px] lg:text-[14px] tracking-[0.2em] text-gray-400 transition-opacity duration-300"
-        style={{ opacity: hovered ? 0 : 0.5 }}
-      >
-        {project.year}
-      </span>
-
-      {/* Logo — shifts up on hover, goes full color */}
-      <div
-        className="absolute inset-0 z-10 flex items-center justify-center transition-transform duration-500"
-        style={{
-          transform: hovered ? "translateY(-50px)" : "translateY(0)",
-          transitionTimingFunction: "cubic-bezier(.22,1,.36,1)",
-        }}
-      >
-        <div className="flex flex-col items-center gap-1">
-          <div
-            className="relative w-80 h-70 transition-transform duration-500"
-            style={{
-              transform: hovered ? "scale(1.1)" : "scale(1)",
-              transitionTimingFunction: "cubic-bezier(.22,1,.36,1)",
-            }}
-          >
-            <Image
-              src={project.logo}
-              alt={`${project.name} logo`}
-              fill
-              className="object-contain transition-all duration-400"
-              
-            />
-          </div>
-          {/* Name fades out as panel slides up */}
-          <span
-            className="font-mono text-[10px] lg:text-[14px] tracking-[0.2em] text-gray-500 dark:text-gray-400 uppercase transition-opacity duration-300"
-            style={{ opacity: hovered ? 0 : 1 }}
-          >
-            {project.name}
-          </span>
-        </div>
-      </div>
-
-      {/* Red thread line draws across bottom on hover */}
-      <div className="absolute bottom-0 left-0 right-0 h-[2px] z-30">
+      <Link href={project.projectUrl}>
+        {/* Subtle red tint on hover */}
         <div
-          className="h-full bg-red-600 transition-all duration-500 relative"
+          className="absolute inset-0 z-0 transition-opacity duration-400"
           style={{
-            width: hovered ? "100%" : "0%",
+            background: "rgba(185,28,28,0.025)",
+            opacity: hovered ? 1 : 0,
+          }}
+        />
+
+        {/* Index */}
+        <span
+          className="absolute top-3.5 left-4 z-10 font-mono text-[9px] lg:text-[14px] tracking-[0.2em] text-red-600 transition-opacity duration-300"
+          style={{ opacity: hovered ? 0 : 0.4 }}
+        >
+          {String(index + 1).padStart(2, "0")}
+        </span>
+
+        {/* Year */}
+        <span
+          className="absolute top-3.5 right-4 z-10 font-mono text-[9px] lg:text-[14px] tracking-[0.2em] text-gray-400 transition-opacity duration-300"
+          style={{ opacity: hovered ? 0 : 0.5 }}
+        >
+          {project.year}
+        </span>
+
+        {/* Logo — shifts up on hover, goes full color */}
+        <div
+          className="absolute inset-0 z-10 flex items-center justify-center transition-transform duration-500"
+          style={{
+            transform: hovered ? "translateY(-50px)" : "translateY(0)",
             transitionTimingFunction: "cubic-bezier(.22,1,.36,1)",
           }}
         >
-          {/* Glowing tip dot */}
-          <div
-            className="absolute top-1/2 right-0 w-2 h-2 rounded-full bg-red-500 -translate-y-1/2 transition-transform duration-300"
-            style={{
-              transform: `translateY(-50%) scale(${hovered ? 1 : 0})`,
-              transitionDelay: hovered ? "0.35s" : "0s",
-            }}
-          />
+          <div className="flex flex-col items-center gap-1">
+            <div
+              className="relative w-80 h-70 transition-transform duration-500"
+              style={{
+                transform: hovered ? "scale(1.1)" : "scale(1)",
+                transitionTimingFunction: "cubic-bezier(.22,1,.36,1)",
+              }}
+            >
+              <Image
+                src={project.logo}
+                alt={`${project.name} logo`}
+                fill
+                className="object-contain transition-all duration-400"
+              />
+            </div>
+            {/* Name fades out as panel slides up */}
+            <span
+              className="font-mono text-[10px] lg:text-[14px] tracking-[0.2em] text-gray-500 dark:text-gray-400 uppercase transition-opacity duration-300"
+              style={{ opacity: hovered ? 0 : 1 }}
+            >
+              {project.name}
+            </span>
+          </div>
         </div>
-      </div>
 
-      {/* Reveal panel slides up from bottom */}
-      <div
-        className="absolute bottom-0 left-0 right-0 z-20 bg-white dark:bg-black border-t-2 border-red-600 px-5 py-4 transition-transform duration-500"
-        style={{
-          transform: hovered ? "translateY(0)" : "translateY(100%)",
-          transitionTimingFunction: "cubic-bezier(.22,1,.36,1)",
-        }}
-      >
-        <p className="font-mono text-[9px]  tracking-[0.25em] text-red-600 uppercase mb-1.5">
-          {project.cat}
-        </p>
-        <h3
-          className="text-[18px] font-normal leading-snug text-gray-900 dark:text-gray-50 mb-2"
-          style={{ fontFamily: "'DM Serif Display', Georgia, serif" }}
-        >
-          {project.name}
-        </h3>
-        <p
-          className="font-mono text-[10px] lg:text-[14px] leading-[1.75] text-gray-500 dark:text-gray-400 mb-3"
+        {/* Red thread line draws across bottom on hover */}
+        <div className="absolute bottom-0 left-0 right-0 h-[2px] z-30">
+          <div
+            className="h-full bg-red-600 transition-all duration-500 relative"
+            style={{
+              width: hovered ? "100%" : "0%",
+              transitionTimingFunction: "cubic-bezier(.22,1,.36,1)",
+            }}
+          >
+            {/* Glowing tip dot */}
+            <div
+              className="absolute top-1/2 right-0 w-2 h-2 rounded-full bg-red-500 -translate-y-1/2 transition-transform duration-300"
+              style={{
+                transform: `translateY(-50%) scale(${hovered ? 1 : 0})`,
+                transitionDelay: hovered ? "0.35s" : "0s",
+              }}
+            />
+          </div>
+        </div>
+
+        {/* Reveal panel slides up from bottom */}
+        <div
+          className="absolute bottom-0 left-0 right-0 z-20 bg-white dark:bg-black border-t-2 border-red-600 px-5 py-4 transition-transform duration-500"
           style={{
-            display: "-webkit-box",
-            WebkitLineClamp: 2,
-            WebkitBoxOrient: "vertical",
-            overflow: "hidden",
+            transform: hovered ? "translateY(0)" : "translateY(100%)",
+            transitionTimingFunction: "cubic-bezier(.22,1,.36,1)",
           }}
         >
-          {project.desc}
-        </p>
-        <div className="flex items-center justify-between">
-          <div className="flex gap-1.5 flex-wrap">
-            {project.stack.map((s) => (
-              <span
-                key={s}
-                className="font-mono text-[9px] lg:text-[14px] tracking-wide border border-gray-200 dark:border-gray-800 text-gray-500 dark:text-gray-500 px-2 py-0.5 uppercase"
-              >
-                {s}
-              </span>
-            ))}
-          </div>
-          <div className="w-7 h-7 rounded-full border border-red-600 flex items-center justify-center text-red-600 flex-shrink-0 bg-red-600/5">
-            <ArrowRight />
+          <p className="font-mono text-[9px]  tracking-[0.25em] text-red-600 uppercase mb-1.5">
+            {project.cat}
+          </p>
+          <h3
+            className="text-[18px] font-normal leading-snug text-gray-900 dark:text-gray-50 mb-2"
+            style={{ fontFamily: "'DM Serif Display', Georgia, serif" }}
+          >
+            {project.name}
+          </h3>
+          <p
+            className="font-mono text-[10px] lg:text-[14px] leading-[1.75] text-gray-500 dark:text-gray-400 mb-3"
+            style={{
+              display: "-webkit-box",
+              WebkitLineClamp: 2,
+              WebkitBoxOrient: "vertical",
+              overflow: "hidden",
+            }}
+          >
+            {project.desc}
+          </p>
+          <div className="flex items-center justify-between">
+            <div className="flex gap-1.5 flex-wrap">
+              {project.stack.map((s) => (
+                <span
+                  key={s}
+                  className="font-mono text-[9px] lg:text-[14px] tracking-wide border border-gray-200 dark:border-gray-800 text-gray-500 dark:text-gray-500 px-2 py-0.5 uppercase"
+                >
+                  {s}
+                </span>
+              ))}
+            </div>
+            <div className="w-7 h-7 rounded-full border border-red-600 flex items-center justify-center text-red-600 flex-shrink-0 bg-red-600/5">
+              <ArrowRight />
+            </div>
           </div>
         </div>
-      </div>
+      </Link>
     </article>
   );
 }
@@ -243,17 +249,14 @@ export default function RemarkableProjects() {
         </div>
 
         {/* Grid — 3 columns, 1px gap border trick */}
-        <div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px"
-          style={{ background: "rgba(0,0,0,0.07)" }}
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px">
           {PROJECTS.map((p, i) => (
             <ProjectCard key={p.id} project={p} index={i} />
           ))}
         </div>
 
         {/* CTA */}
-        <div className="flex items-center gap-4 mt-10 pt-8 border-t border-gray-100 dark:border-gray-800">
+        {/* <div className="flex items-center gap-4 mt-10 pt-8 border-t border-gray-100 dark:border-gray-800">
           <div className="w-7 h-px bg-gray-200 dark:bg-gray-700" />
           <a
             href="/projects"
@@ -261,7 +264,7 @@ export default function RemarkableProjects() {
           >
             View all case studies →
           </a>
-        </div>
+        </div> */}
       </div>
 
       <style>{`

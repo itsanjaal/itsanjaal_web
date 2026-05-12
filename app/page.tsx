@@ -9,13 +9,10 @@ import PartnersSection from "@/components/PartnersSection";
 export default function Home() {
   return (
     <div className="bg-white">
-
       <SmoothCarousel />
-
       <ServicesSection />
       <RemarkableProjects />
       <PartnersSection/>
-  
       <FridayCulture />
       <ContactSection />
       <CTASection />

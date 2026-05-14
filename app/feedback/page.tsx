@@ -640,7 +640,7 @@ export default function FeedbackPage() {
   return (
     <main className="min-h-screen w-full py-16 lg:py-10">
       {/* Header */}
-      <div className="mb-5 border-destructive border-b-2 p-5 lg:px-45">
+      <div className="mb-5 p-5 lg:px-45">
         <p className="text-[16px] tracking-[0.3em] text-red-600 uppercase mb-4">
           Client Feedback
         </p>

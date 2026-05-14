@@ -108,7 +108,7 @@ export default function ServicesSection() {
     <section className="container mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex items-end justify-between flex-wrap gap-4 mb-12 max-w-7xl mx-auto">
         <div>
-          <p className="font-mono text-[10px] tracking-[0.3em] text-red-600 uppercase mb-4">
+          <p className=" text-[10px] tracking-[0.3em] text-red-600 uppercase mb-4">
             Our Services
           </p>
           <h2
@@ -119,7 +119,7 @@ export default function ServicesSection() {
           </h2>
           <div className="w-8 h-[2px] bg-red-600 mt-5" />
         </div>
-        <span className="font-mono text-[10px] tracking-widest text-gray-400 uppercase pb-2">
+        <span className=" text-[10px] tracking-widest text-gray-400 uppercase pb-2">
           9 services
         </span>
       </div>

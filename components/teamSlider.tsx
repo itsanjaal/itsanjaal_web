@@ -30,7 +30,7 @@ const DEFAULT_TEAM: TeamMember[] = [
       "In the beginning, you feel like you're just moving boxes. Eventually, you realize you're building the window through which the world sees the data.",
     img: "/team/t2.webp",
   },
-  
+
   {
     name: "Gaurav Deol",
     role: "DevOps & Backend Developer",
@@ -41,16 +41,17 @@ const DEFAULT_TEAM: TeamMember[] = [
   {
     name: "Robin Sharma",
     role: "Senior Advisor",
-    quote: "Genius is 1% talent and 99% percent hard work.",
+    quote:
+      "Strategy without wisdom is just gambling. My job is to ensure we are playing chess, not checkers.",
     img: "/team/t3.webp",
   },
-  
+
   {
     name: "Rupesh Chaulagain",
     role: "Senior Backend Developer",
     quote:
       "A senior developer doesn't just build the bridge; they design the way it fails so the city doesn't go dark.",
-    img: "/team/t4.webp",
+    img: "/team/t8.jpeg",
   },
   {
     name: "Gobinda Bhandara",
@@ -90,7 +91,7 @@ export function TeamSlider({ team = DEFAULT_TEAM }: TeamSliderProps) {
   };
 
   return (
-    <section className="py-32 bg-white overflow-hidden">
+    <section className="py-12 bg-white overflow-hidden">
       {/* Heading */}
       <div className="text-center mb-20 space-y-4">
         <h2 className="text-4xl font-black uppercase text-destructive tracking-tighter">

@@ -126,7 +126,7 @@ export default function RootLayout({
       <body>
         {/* <Header /> */}
         <Navbar />
-        <main className="pt-20">{children}</main>
+        <main className="">{children}</main>
         <Footer />
       </body>
     </html>

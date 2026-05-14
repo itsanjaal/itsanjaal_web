@@ -97,25 +97,25 @@ function InfoCard({
       </div>
       <div>
         <p
-          className="font-mono uppercase mb-1"
+          className=" uppercase mb-1"
           style={{ fontSize: "9px", letterSpacing: "0.25em", color: "#b91c1c" }}
         >
           {label}
         </p>
         <p
-          className="font-mono font-medium text-gray-900 mb-0.5"
+          className=" font-medium text-gray-900 mb-0.5"
           style={{ fontSize: "clamp(12px,1.2vw,15px)" }}
         >
           {value}
         </p>
         {sub && (
-          <p className="font-mono text-gray-400" style={{ fontSize: "10px" }}>
+          <p className=" text-gray-400" style={{ fontSize: "10px" }}>
             {sub}
           </p>
         )}
       </div>
       <div
-        className="flex items-center gap-1.5 font-mono uppercase text-red-600 transition-all duration-200"
+        className="flex items-center gap-1.5  uppercase text-red-600 transition-all duration-200"
         style={{
           fontSize: "9px",
           letterSpacing: "0.2em",
@@ -174,7 +174,7 @@ function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
 }
 
 const inputCls =
-  "w-full bg-white border-0 border-b-2 border-gray-200 font-mono text-sm text-gray-900 py-3 px-0 placeholder:text-gray-300 focus:outline-none focus:border-red-600 transition-colors duration-300";
+  "w-full bg-white border-0 border-b-2 border-gray-200  text-sm text-gray-900 py-3 px-0 placeholder:text-gray-300 focus:outline-none focus:border-red-600 transition-colors duration-300";
 
 /* ─── Page ───────────────────────────────────────────────── */
 export default function ContactPage() {
@@ -270,7 +270,7 @@ export default function ContactPage() {
         {/* Large faint text watermark */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
           <span
-            className="font-mono font-bold text-white select-none"
+            className=" font-bold text-white select-none"
             style={{
               fontSize: "clamp(80px,15vw,200px)",
               opacity: 0.05,
@@ -287,7 +287,7 @@ export default function ContactPage() {
             <div className="flex items-center gap-3 mb-6">
               <div className="w-6 h-0.5 bg-white/60 flex-shrink-0" />
               <span
-                className="font-mono uppercase tracking-[0.32em] text-white/70"
+                className=" uppercase tracking-[0.32em] text-white/70"
                 style={{ fontSize: "clamp(9px,1vw,11px)" }}
               >
                 IT Sanjaal
@@ -305,7 +305,7 @@ export default function ContactPage() {
               <em className="italic text-red-200">Something Great</em>
             </h1>
             <p
-              className="font-mono leading-relaxed text-white/70 max-w-md"
+              className=" leading-relaxed text-white/70 max-w-md"
               style={{ fontSize: "clamp(11px,1.15vw,14px)" }}
             >
               Whether you have a project in mind, a question to ask, or just
@@ -332,9 +332,9 @@ export default function ContactPage() {
               <Ico path="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
             }
             label="WhatsApp"
-            value="+977-9851444004"
+            value="+977-9851276804"
             sub="Quick replies on WhatsApp"
-            href="https://wa.me/9851444004"
+            href="https://wa.me/9851276804"
             ext
           />
           <InfoCard
@@ -359,7 +359,7 @@ export default function ContactPage() {
             label="Visit Us"
             value="Buddhanagar, Kathmandu"
             sub="Open Google Maps"
-            href="https://www.google.com/maps/place/M8PH%2B2J4,+Kathmandu+44600/@27.6849814,85.3281286,19z"
+            href="https://www.google.com/maps/place/IT+Sanjaal+Pvt+Ltd/@27.6849721,85.3283284,19z/data=!3m1!4b1!4m6!3m5!1s0x39eb1967e66dc71d:0xde9ef4adc107b919!8m2!3d27.6849721!4d85.3289721!16s%2Fg%2F11yz4_f1jg?entry=ttu&g_ep=EgoyMDI2MDUxMS4wIKXMDSoASAFQAw%3D%3D"
             ext
           />
         </div>
@@ -372,7 +372,7 @@ export default function ContactPage() {
           <div className="relative min-h-[400px] lg:min-h-0">
             {/* Map label */}
             <div
-              className="absolute top-4 left-4 z-10 bg-red-600 text-white font-mono uppercase px-3 py-1.5 flex items-center gap-2"
+              className="absolute top-4 left-4 z-10 bg-red-600 text-white  uppercase px-3 py-1.5 flex items-center gap-2"
               style={{ fontSize: "9px", letterSpacing: "0.25em" }}
             >
               <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse flex-shrink-0" />
@@ -408,19 +408,19 @@ export default function ContactPage() {
             {/* Address card pinned to bottom */}
             <div className="absolute bottom-4 left-4 right-4 z-10 bg-white border-l-4 border-red-600 px-4 py-3 shadow-lg">
               <p
-                className="font-mono uppercase text-red-600 mb-1"
+                className=" uppercase text-red-600 mb-1"
                 style={{ fontSize: "8px", letterSpacing: "0.25em" }}
               >
                 Address
               </p>
               <p
-                className="font-mono text-gray-900 font-medium"
+                className=" text-gray-900 font-medium"
                 style={{ fontSize: "13px" }}
               >
                 Buddhanagar, Kathmandu 44600
               </p>
               <p
-                className="font-mono text-gray-400"
+                className=" text-gray-400"
                 style={{ fontSize: "10px" }}
               >
                 Nepal
@@ -434,7 +434,7 @@ export default function ContactPage() {
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-5 h-0.5 bg-red-600 flex-shrink-0" />
                 <span
-                  className="font-mono uppercase text-red-600 tracking-[0.3em]"
+                  className=" uppercase text-red-600 tracking-[0.3em] lg:14px"
                   style={{ fontSize: "9px" }}
                 >
                   Send a Message
@@ -456,7 +456,7 @@ export default function ContactPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
                   <label
-                    className="font-mono uppercase tracking-[0.25em] text-red-600 block mb-2"
+                    className=" uppercase tracking-[0.25em] text-red-600 block mb-2"
                     style={{ fontSize: "9px" }}
                   >
                     Full Name *
@@ -469,14 +469,14 @@ export default function ContactPage() {
                     className={inputCls}
                   />
                   {errors.name && (
-                    <p className="font-mono text-[9px] text-red-500 mt-1">
+                    <p className=" text-[9px] text-red-500 mt-1">
                       {errors.name}
                     </p>
                   )}
                 </div>
                 <div>
                   <label
-                    className="font-mono uppercase tracking-[0.25em] text-red-600 block mb-2"
+                    className=" uppercase tracking-[0.25em] text-red-600 block mb-2"
                     style={{ fontSize: "9px" }}
                   >
                     Phone
@@ -493,7 +493,7 @@ export default function ContactPage() {
 
               <div>
                 <label
-                  className="font-mono uppercase tracking-[0.25em] text-red-600 block mb-2"
+                  className=" uppercase tracking-[0.25em] text-red-600 block mb-2"
                   style={{ fontSize: "9px" }}
                 >
                   Email Address *
@@ -506,7 +506,7 @@ export default function ContactPage() {
                   className={inputCls}
                 />
                 {errors.email && (
-                  <p className="font-mono text-[9px] text-red-500 mt-1">
+                  <p className=" text-[9px] text-red-500 mt-1">
                     {errors.email}
                   </p>
                 )}
@@ -514,7 +514,7 @@ export default function ContactPage() {
 
               <div>
                 <label
-                  className="font-mono uppercase tracking-[0.25em] text-red-600 block mb-2"
+                  className=" uppercase tracking-[0.25em] text-red-600 block mb-2"
                   style={{ fontSize: "9px" }}
                 >
                   Subject *
@@ -527,7 +527,7 @@ export default function ContactPage() {
                   className={inputCls}
                 />
                 {errors.subject && (
-                  <p className="font-mono text-[9px] text-red-500 mt-1">
+                  <p className=" text-[9px] text-red-500 mt-1">
                     {errors.subject}
                   </p>
                 )}
@@ -535,7 +535,7 @@ export default function ContactPage() {
 
               <div>
                 <label
-                  className="font-mono uppercase tracking-[0.25em] text-red-600 block mb-2"
+                  className=" uppercase tracking-[0.25em] text-red-600 block mb-2"
                   style={{ fontSize: "9px" }}
                 >
                   Message *
@@ -551,14 +551,14 @@ export default function ContactPage() {
                 />
                 <div className="flex justify-between mt-1">
                   {errors.message ? (
-                    <p className="font-mono text-[9px] text-red-500">
+                    <p className=" text-[9px] text-red-500">
                       {errors.message}
                     </p>
                   ) : (
                     <span />
                   )}
                   <span
-                    className="font-mono text-[9px] transition-colors duration-200"
+                    className=" text-[9px] transition-colors duration-200"
                     style={{ color: chars > 900 ? "#b91c1c" : "#d1d5db" }}
                   >
                     {chars} / 1000
@@ -570,7 +570,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="group flex items-center gap-3 font-mono uppercase text-white border-0 cursor-pointer transition-all duration-200 disabled:opacity-50"
+                  className="group flex items-center gap-3  uppercase text-white border-0 cursor-pointer transition-all duration-200 disabled:opacity-50"
                   style={{
                     background: "#b91c1c",
                     fontSize: "clamp(9px,1vw,11px)",
@@ -632,7 +632,7 @@ export default function ContactPage() {
                 </button>
                 {status === "success" && (
                   <span
-                    className="font-mono text-gray-400 flex items-center gap-2"
+                    className=" text-gray-400 flex items-center gap-2"
                     style={{
                       fontSize: "clamp(9px,1vw,11px)",
                       letterSpacing: "0.12em",
@@ -655,14 +655,13 @@ export default function ContactPage() {
             {/* Office hours */}
             <div>
               <p
-                className="font-mono uppercase tracking-[0.3em] text-red-600 mb-5"
-                style={{ fontSize: "9px" }}
+                className=" uppercase tracking-[0.3em] text-red-600 mb-5"
+                style={{ fontSize: "12px" }}
               >
                 Office Hours
               </p>
               {[
-                { day: "Sunday – Friday", hours: "9:00 AM – 6:00 PM" },
-                { day: "Saturday", hours: "10:00 AM – 3:00 PM" },
+                { day: "Monday – Friday", hours: "10:00 AM – 6:00 PM" },
                 { day: "Public Holidays", hours: "Closed" },
               ].map((r) => (
                 <div
@@ -670,13 +669,13 @@ export default function ContactPage() {
                   className="flex items-center justify-between py-3 border-b border-gray-100"
                 >
                   <span
-                    className="font-mono text-gray-600"
+                    className=" text-gray-600"
                     style={{ fontSize: "clamp(11px,1.1vw,13px)" }}
                   >
                     {r.day}
                   </span>
                   <span
-                    className="font-mono font-medium"
+                    className=" font-medium"
                     style={{
                       fontSize: "clamp(11px,1.1vw,13px)",
                       color: r.hours === "Closed" ? "#9ca3af" : "#111",
@@ -691,8 +690,8 @@ export default function ContactPage() {
             {/* Socials */}
             <div>
               <p
-                className="font-mono uppercase tracking-[0.3em] text-red-600 mb-5"
-                style={{ fontSize: "9px" }}
+                className=" uppercase tracking-[0.3em] text-red-600 mb-5"
+                style={{ fontSize: "12px" }}
               >
                 Follow Us
               </p>
@@ -749,13 +748,13 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <p
-                          className="font-mono uppercase tracking-[0.15em] text-gray-900 font-medium mb-0.5"
+                          className=" uppercase tracking-[0.15em] text-gray-900 font-medium mb-0.5"
                           style={{ fontSize: "12px" }}
                         >
                           {s.label}
                         </p>
                         <p
-                          className="font-mono text-gray-400"
+                          className=" text-gray-400"
                           style={{ fontSize: "11px" }}
                         >
                           {s.handle}

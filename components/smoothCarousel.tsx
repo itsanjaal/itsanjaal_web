@@ -50,7 +50,7 @@ export default function ForegroundThreadCarousel() {
   const rightZoneDelay = 1.8;
 
   return (
-    <div className="relative mx-auto w-full lg:w-screen min-h-screen h-dvh flex items-center justify-center overflow-hidden bg-white p-6 md:p-12 lg:pb-40">
+    <div className="relative mx-auto w-full lg:w-screen min-h-screen lg:h-dvh flex items-start lg:items-center justify-start lg:justify-center overflow-hidden bg-white p-6 md:p-12 lg:pb-40 pt-20 lg:pt-0">
       <svg
         viewBox="0 0 1000 400"
         className="absolute inset-0 w-full h-full pointer-events-none z-10 opacity-40 md:opacity-100"
@@ -72,7 +72,7 @@ export default function ForegroundThreadCarousel() {
       <AnimatePresence mode="wait">
         <motion.div
           key={index}
-          className={`relative w-full max-w-7xl h-full flex flex-col-reverse lg:items-center justify-center lg:justify-between gap-10 lg:gap-20 ${
+          className={`relative w-full max-w-7xl h-auto lg:h-full flex flex-col-reverse lg:items-center justify-start lg:justify-between gap-20 lg:gap-20 ${
             isEven ? "lg:flex-row" : "lg:flex-row-reverse"
           }`}
         >
@@ -90,8 +90,8 @@ export default function ForegroundThreadCarousel() {
             }}
             className="w-full lg:w-1/2 space-y-4 lg:space-y-6 z-20 text-center lg:text-left"
           >
-            <span className="inline-block px-4 py-1 rounded-full bg-rose-100 text-rose-700 font-semibold text-xs lg:text-sm">
-              Slide {index + 1}
+            <span className="inline-block px-4 py-1 rounded-full bg-destructive text-rose-700 font-semibold text-xs lg:text-sm">
+              {/* Slide {index + 1} */}
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-zinc-950 leading-tight tracking-tighter">
               {slides[index].title}

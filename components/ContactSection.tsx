@@ -60,8 +60,8 @@ const CONTACTS = [
   },
   {
     label: "WhatsApp",
-    value: "+977-9851444004",
-    href: "https://wa.me/9851444004",
+    value: "+977-9851276804",
+    href: "https://wa.me/9851276804",
     ext: true,
     d: "M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z",
   },
@@ -76,7 +76,7 @@ const CONTACTS = [
   {
     label: "Location",
     value: "Buddhanagar, Kathmandu",
-    href: "https://www.google.com/maps/place/M8PH%2B2J4,+Kathmandu+44600/@27.6849814,85.3281286,19z",
+    href: "https://www.google.com/maps/place/IT+Sanjaal+Pvt+Ltd/@27.6849721,85.3283284,19z/data=!3m1!4b1!4m6!3m5!1s0x39eb1967e66dc71d:0xde9ef4adc107b919!8m2!3d27.6849721!4d85.3289721!16s%2Fg%2F11yz4_f1jg?entry=ttu&g_ep=EgoyMDI2MDUxMS4wIKXMDSoASAFQAw%3D%3D",
     ext: true,
     d: "M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z",
     d2: "M12 10m-3 0a3 3 0 106 0 3 3 0 00-6 0",
@@ -103,7 +103,7 @@ function ContactItem({ label, value, href, ext, d, d2 }: (typeof CONTACTS)[0]) {
       </div>
       <div className="flex-1 min-w-0">
         <p
-          className="font-mono uppercase mb-0.5"
+          className=" uppercase mb-0.5"
           style={{
             fontSize: "12px",
             letterSpacing: "0.22em",
@@ -113,7 +113,7 @@ function ContactItem({ label, value, href, ext, d, d2 }: (typeof CONTACTS)[0]) {
           {label}
         </p>
         <span
-          className="font-mono transition-colors duration-200 block truncate"
+          className=" transition-colors duration-200 block truncate"
           style={{
             fontSize: "clamp(12px,1.2vw,14px)",
             color: hov ? "#b91c1c" : "#111",
@@ -137,7 +137,7 @@ function ContactItem({ label, value, href, ext, d, d2 }: (typeof CONTACTS)[0]) {
 }
 
 const inputCls =
-  "w-full bg-transparent border-0 border-b-2 border-gray-200 font-mono text-sm text-gray-900 py-2.5 px-0 placeholder:text-gray-300 focus:outline-none focus:border-red-600 transition-colors duration-300";
+  "w-full bg-transparent border-0 border-b-2 border-gray-200  text-sm text-gray-900 py-2.5 px-0 placeholder:text-gray-300 focus:outline-none focus:border-red-600 transition-colors duration-300";
 
 export default function ContactSection() {
   const [form, setForm] = useState<FormData>(EMPTY);
@@ -240,7 +240,7 @@ export default function ContactSection() {
           <div className="flex items-center gap-3 mb-4">
             <div className="w-6 h-0.5 bg-red-600 flex-shrink-0" />
             <span
-              className="font-mono uppercase tracking-[0.32em] text-red-600"
+              className=" uppercase tracking-[0.32em] text-red-600"
               style={{ fontSize: "clamp(12px,1vw,11px)" }}
             >
               Let's talk
@@ -255,10 +255,7 @@ export default function ContactSection() {
           >
             Get In <em className="italic text-red-600">Touch</em>
           </h2>
-          <p
-            className="font-mono leading-relaxed text-gray-500 max-w-lg"
-            style={{ fontSize: "clamp(11px,1.1vw,13px)" }}
-          >
+          <p className="leading-relaxed text-gray-500 max-w-lg">
             Ready to start your next project? Reach out and let's discuss how we
             can help transform your business.
           </p>
@@ -270,7 +267,7 @@ export default function ContactSection() {
           {/* LEFT */}
           <div className="bg-white pt-2 pb-10 lg:pr-12">
             <p
-              className="font-mono uppercase tracking-[0.3em] text-red-600 mb-5"
+              className=" uppercase tracking-[0.3em] text-red-600 mb-5"
               style={{ fontSize: "12px" }}
             >
               Contact Information
@@ -284,7 +281,7 @@ export default function ContactSection() {
             {/* Socials */}
             <div className="mt-8">
               <p
-                className="font-mono uppercase tracking-[0.28em] text-red-600 mb-4"
+                className=" uppercase tracking-[0.28em] text-red-600 mb-4"
                 style={{ fontSize: "12px" }}
               >
                 Follow Us
@@ -340,7 +337,7 @@ export default function ContactSection() {
           {/* RIGHT — form */}
           <div className="bg-white pt-2 pb-10 lg:pl-12">
             <p
-              className="font-mono uppercase tracking-[0.3em] text-red-600 mb-5"
+              className=" uppercase tracking-[0.3em] text-red-600 mb-5"
               style={{ fontSize: "12px" }}
             >
               Send a Message
@@ -350,7 +347,7 @@ export default function ContactSection() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label
-                    className="font-mono uppercase tracking-[0.28em] text-red-600 block mb-2"
+                    className=" uppercase tracking-[0.28em] text-red-600 block mb-2"
                     style={{ fontSize: "12px" }}
                   >
                     Full Name *
@@ -363,14 +360,14 @@ export default function ContactSection() {
                     className={inputCls}
                   />
                   {errors.name && (
-                    <p className="font-mono text-[12px] text-red-500 mt-1">
+                    <p className=" text-[12px] text-red-500 mt-1">
                       {errors.name}
                     </p>
                   )}
                 </div>
                 <div>
                   <label
-                    className="font-mono uppercase tracking-[0.28em] text-red-600 block mb-2"
+                    className=" uppercase tracking-[0.28em] text-red-600 block mb-2"
                     style={{ fontSize: "12px" }}
                   >
                     Phone
@@ -387,7 +384,7 @@ export default function ContactSection() {
 
               <div>
                 <label
-                  className="font-mono uppercase tracking-[0.28em] text-red-600 block mb-2"
+                  className=" uppercase tracking-[0.28em] text-red-600 block mb-2"
                   style={{ fontSize: "12px" }}
                 >
                   Email Address *
@@ -400,7 +397,7 @@ export default function ContactSection() {
                   className={inputCls}
                 />
                 {errors.email && (
-                  <p className="font-mono text-[12px] text-red-500 mt-1">
+                  <p className=" text-[12px] text-red-500 mt-1">
                     {errors.email}
                   </p>
                 )}
@@ -408,7 +405,7 @@ export default function ContactSection() {
 
               <div>
                 <label
-                  className="font-mono uppercase tracking-[0.28em] text-red-600 block mb-2"
+                  className=" uppercase tracking-[0.28em] text-red-600 block mb-2"
                   style={{ fontSize: "12px" }}
                 >
                   Message *
@@ -424,14 +421,14 @@ export default function ContactSection() {
                 />
                 <div className="flex justify-between mt-1">
                   {errors.message ? (
-                    <p className="font-mono text-[12px] text-red-500">
+                    <p className=" text-[12px] text-red-500">
                       {errors.message}
                     </p>
                   ) : (
                     <span />
                   )}
                   <span
-                    className="font-mono text-[12px] transition-colors duration-200"
+                    className=" text-[12px] transition-colors duration-200"
                     style={{ color: chars > 900 ? "#b91c1c" : "#d1d5db" }}
                   >
                     {chars} / 1000
@@ -443,7 +440,7 @@ export default function ContactSection() {
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="group flex items-center gap-3 font-mono uppercase text-white border-0 cursor-pointer transition-all duration-200 disabled:opacity-50"
+                  className="group flex items-center gap-3  uppercase text-white border-0 cursor-pointer transition-all duration-200 disabled:opacity-50"
                   style={{
                     background: "#b91c1c",
                     fontSize: "clamp(12px,1vw,11px)",
@@ -505,7 +502,7 @@ export default function ContactSection() {
                 </button>
                 {status === "success" && (
                   <span
-                    className="font-mono flex items-center gap-2 text-gray-400"
+                    className=" flex items-center gap-2 text-gray-400"
                     style={{
                       fontSize: "clamp(12px,1vw,11px)",
                       letterSpacing: "0.12em",

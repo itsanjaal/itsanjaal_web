@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 import Link from "next/link";
 import { TeamSlider } from "@/components/teamSlider";
+import PartnersSection from "@/components/PartnersSection";
 
 const AboutPage = () => {
   return (
@@ -23,14 +24,8 @@ const AboutPage = () => {
             Simplify With <span className="text-[#FF3131]">IT Sanjaal</span>
           </h1>
           <p className="text-gray-600 text-xl leading-relaxed max-w-md">
-            At IT Sanjaal, our mission is to simplify the digital landscape. We
-            specialize in transforming complex challenges into streamlined IT
-            solutions, making work effortless for businesses ranging from local
-            consultancies to specialized Bio-IT ventures. By focusing on
-            intuitive web development and efficient CRM systems, we bridge the
-            gap between technical intricacy and user-centric design. At
-            itsanjaal, we handle the digital heavy lifting so you can focus on
-            what matters most—your growth.
+            At IT Sanjaal, we solve the complex so you can stay simple. We build
+            the bridges; you lead the way.
           </p>
           {/* <button className="bg-[#FF3131] text-white px-8 py-4 rounded-xl font-bold shadow-lg shadow-red-200 hover:scale-105 transition-transform">
             Get Started
@@ -268,6 +263,7 @@ const AboutPage = () => {
           </motion.div>
         </div>
       </section> */}
+      <PartnersSection/>
       <TeamSlider />
     </div>
   );

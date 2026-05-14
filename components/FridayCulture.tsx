@@ -47,11 +47,11 @@ function CountUnit({ value, label }: { value: string; label: string }) {
   }, [value]);
   return (
     <div className="flex flex-col items-center gap-0.5">
-      <span className="font-mono font-medium tabular-nums text-gray-300 transition-all duration-200"
+      <span className=" font-medium tabular-nums text-gray-300 transition-all duration-200"
         style={{ fontSize: "clamp(20px,3vw,36px)", opacity: flip ? 0.2 : 1, transform: flip ? "translateY(-3px)" : "none" }}>
         {value}
       </span>
-      <span className="font-mono uppercase text-gray-300"
+      <span className=" uppercase text-gray-300"
         style={{ fontSize: "clamp(7px,0.9vw,9px)", letterSpacing: "0.2em" }}>{label}</span>
     </div>
   );
@@ -61,7 +61,7 @@ function BlinkSep() {
   const [dim, setDim] = useState(false);
   useEffect(() => { const id = setInterval(() => setDim(d => !d), 1000); return () => clearInterval(id); }, []);
   return (
-    <span className="font-mono font-light text-red-400 transition-opacity duration-500 self-start pt-0.5"
+    <span className=" font-light text-red-400 transition-opacity duration-500 self-start pt-0.5"
       style={{ fontSize: "clamp(16px,2.5vw,30px)", opacity: dim ? 0.15 : 0.7 }}>:</span>
   );
 }
@@ -69,7 +69,7 @@ function BlinkSep() {
 /* ─── Floating tag ───────────────────────────────────────── */
 function FloatTag({ label, style }: { label: string; style: React.CSSProperties }) {
   return (
-    <span className="absolute font-mono uppercase pointer-events-none select-none"
+    <span className="absolute  uppercase pointer-events-none select-none"
       style={{ fontSize: "clamp(7px,0.9vw,9px)", letterSpacing: "0.15em",
         color: "rgba(255,255,255,0.65)", border: "0.5px solid rgba(255,255,255,0.3)",
         padding: "3px 10px", ...style }}>
@@ -84,7 +84,7 @@ function Perk({ icon, label }: { icon: string; label: string }) {
     <div className="flex items-center gap-3">
       <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center border border-red-200 bg-red-50"
         style={{ fontSize: "clamp(12px,1.4vw,15px)" }}>{icon}</div>
-      <span className="font-mono text-gray-600" style={{ fontSize: "clamp(10px,1.05vw,12px)" }}>{label}</span>
+      <span className=" text-gray-600" style={{ fontSize: "clamp(10px,1.05vw,12px)" }}>{label}</span>
     </div>
   );
 }
@@ -132,7 +132,7 @@ export default function FridayCulture() {
       {/* ── Countdown strip — red bg ── */}
       <div className="bg-red-600 flex items-center justify-center gap-4 lg:gap-8 flex-wrap px-6 py-2.5">
         <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse flex-shrink-0" />
-        <span className="font-mono uppercase tracking-[0.25em] text-white/80" style={{ fontSize: "clamp(8px,1vw,10px)" }}>
+        <span className=" uppercase tracking-[0.25em] text-white/80" style={{ fontSize: "clamp(8px,1vw,10px)" }}>
           Next session in
         </span>
         <div className="flex items-center gap-2 lg:gap-3">
@@ -143,7 +143,7 @@ export default function FridayCulture() {
           <BlinkSep />
           <CountUnit value={parts.secs} label="Sec" />
         </div>
-        <span className="font-mono uppercase tracking-[0.25em] text-white/80" style={{ fontSize: "clamp(8px,1vw,10px)" }}>
+        <span className=" uppercase tracking-[0.25em] text-white/80" style={{ fontSize: "clamp(8px,1vw,10px)" }}>
           Every Friday @ 3 PM
         </span>
         <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse flex-shrink-0" />
@@ -178,13 +178,13 @@ export default function FridayCulture() {
 
           {/* Time badge */}
           <div className="absolute bottom-7 left-6 z-10 pl-3.5" style={{ borderLeft: "2px solid rgba(255,255,255,0.6)" }}>
-            <p className="font-mono uppercase mb-1 text-white/60" style={{ fontSize: "clamp(7px,0.9vw,9px)", letterSpacing: "0.28em" }}>
+            <p className=" uppercase mb-1 text-white/60" style={{ fontSize: "clamp(7px,0.9vw,9px)", letterSpacing: "0.28em" }}>
               Weekly ritual
             </p>
             <p className="text-white/95 mb-0.5" style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "clamp(16px,2vw,22px)" }}>
               Friday, 3 PM
             </p>
-            <p className="font-mono uppercase text-white/45" style={{ fontSize: "clamp(7px,0.85vw,9px)", letterSpacing: "0.2em" }}>
+            <p className=" uppercase text-white/45" style={{ fontSize: "clamp(7px,0.85vw,9px)", letterSpacing: "0.2em" }}>
               Open to all — coffee included
             </p>
           </div>
@@ -208,7 +208,7 @@ export default function FridayCulture() {
           {/* Eyebrow */}
           <div className="flex items-center gap-3 mb-5">
             <div className="w-5 h-0.5 bg-red-600 flex-shrink-0" />
-            <span className="font-mono uppercase text-red-600"
+            <span className=" uppercase text-red-600"
               style={{ fontSize: "clamp(9px,1vw,11px)", letterSpacing: "0.32em" }}>Friday Culture</span>
           </div>
 
@@ -227,7 +227,7 @@ export default function FridayCulture() {
             <span className="absolute -top-3 left-0 select-none pointer-events-none text-red-200"
               style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(36px,4vw,48px)", lineHeight: 1 }}
               aria-hidden>"</span>
-            <p className="font-mono leading-[1.9] text-gray-500" style={{ fontSize: "clamp(11px,1.1vw,13px)" }}>
+            <p className=" leading-[1.9] text-gray-500" style={{ fontSize: "clamp(11px,1.1vw,13px)" }}>
               {bodyText}
             </p>
           </div>
@@ -242,7 +242,7 @@ export default function FridayCulture() {
           {/* CTA */}
           <div className="flex items-center gap-5 flex-wrap">
             <button onClick={handleJoin} disabled={joining}
-              className="group flex items-center gap-2.5 font-mono uppercase text-white border-0 cursor-pointer transition-all duration-200 disabled:opacity-50"
+              className="group flex items-center gap-2.5  uppercase text-white border-0 cursor-pointer transition-all duration-200 disabled:opacity-50"
               style={{ background: joined ? "#991b1b" : "#b91c1c",
                 fontSize: "clamp(9px,1vw,11px)", letterSpacing: "0.25em",
                 padding: "clamp(12px,1.4vw,15px) clamp(20px,2.4vw,30px)" }}
@@ -260,14 +260,14 @@ export default function FridayCulture() {
               )}
             </button>
             {session.joinClicks > 0 && (
-              <span className="font-mono text-gray-400" style={{ fontSize: "clamp(9px,1vw,11px)", letterSpacing: "0.18em" }}>
+              <span className=" text-gray-400" style={{ fontSize: "clamp(9px,1vw,11px)", letterSpacing: "0.18em" }}>
                 {session.joinClicks} interested
               </span>
             )}
           </div>
 
           <a href="/friday/archive"
-            className="font-mono uppercase text-gray-400 hover:text-red-600 transition-colors duration-200 mt-4 w-fit block"
+            className=" uppercase text-gray-400 hover:text-red-600 transition-colors duration-200 mt-4 w-fit block"
             style={{ fontSize: "clamp(9px,1vw,11px)", letterSpacing: "0.22em" }}>
             View past sessions →
           </a>

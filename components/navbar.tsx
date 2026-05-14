@@ -29,7 +29,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-white border-b fixed top-0 left-0 w-full z-[100]">
+    <nav className="bg-white border-b sticky top-0 left-0 w-full z-[100]">
       <div className="flex items-center justify-between max-w-[1440px] mx-auto h-20 px-4 md:px-2 lg:px-8">
         
         {/* Logo Section */}

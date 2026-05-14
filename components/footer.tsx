@@ -145,7 +145,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="text-black-700 hover:underline hover:text-red-700 transition-colors"
                 >
-                  +977-9851444004
+                  +977-9851276804
                 </a>
               </li>
               <li className="flex items-center space-x-2">

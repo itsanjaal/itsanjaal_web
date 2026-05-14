@@ -83,7 +83,7 @@ function PartnerCard({
 
       {/* Name */}
       <span
-        className="font-mono uppercase text-gray-400 group-hover:text-red-600 transition-colors duration-300"
+        className=" uppercase text-gray-400 group-hover:text-red-600 transition-colors duration-300"
         style={{ fontSize: "9px", letterSpacing: "0.2em" }}
       >
         {name}
@@ -95,7 +95,7 @@ function PartnerCard({
 /* ─── Section ────────────────────────────────────────────── */
 export default function PartnersSection() {
   return (
-    <section className="relative bg-white py-20 lg:py-24 overflow-hidden">
+    <section className="relative bg-white py-20 lg:py-14 overflow-hidden">
       {/* Top accent */}
       <div className="absolute top-0 left-0 right-0 h-px bg-red-600" />
 
@@ -104,7 +104,7 @@ export default function PartnersSection() {
         <div className="flex items-center gap-3 mb-4">
           <div className="w-6 h-0.5 bg-red-600 flex-shrink-0" />
           <span
-            className="font-mono uppercase text-red-600"
+            className=" uppercase text-red-600"
             style={{ fontSize: "clamp(9px,1vw,11px)", letterSpacing: "0.32em" }}
           >
             Trusted by
@@ -120,8 +120,8 @@ export default function PartnersSection() {
           Our <em className="italic text-red-600">Partners</em>
         </h2>
         <p
-          className="font-mono leading-relaxed text-gray-500 max-w-lg"
-          style={{ fontSize: "clamp(11px,1.1vw,13px)" }}
+          className="leading-relaxed text-gray-500 max-w-lg"
+          style={{ fontSize: "16px" }}
         >
           We collaborate with forward-thinking organisations who share our
           commitment to excellence and innovation.
@@ -165,7 +165,7 @@ export default function PartnersSection() {
       {/* Bottom strip */}
       <div className="max-w-7xl mx-auto px-6 lg:px-12 mt-12 pt-6 flex items-center justify-between flex-wrap gap-4">
         <span
-          className="font-mono uppercase text-gray-400"
+          className=" uppercase text-gray-400"
           style={{ fontSize: "clamp(8px,0.9vw,10px)", letterSpacing: "0.22em" }}
         >
           {PARTNERS.length} trusted partner
@@ -173,7 +173,7 @@ export default function PartnersSection() {
         </span>
         <a
           href="/contact"
-          className="font-mono uppercase text-red-600 hover:text-red-700 transition-colors duration-200 no-underline"
+          className=" uppercase text-red-600 hover:text-red-700 transition-colors duration-200 no-underline"
           style={{ fontSize: "clamp(8px,0.9vw,10px)", letterSpacing: "0.22em" }}
         >
           Become a partner →

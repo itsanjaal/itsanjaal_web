@@ -23,7 +23,7 @@ const PROJECTS = [
     name: "EduHub",
     cat: "Web Development",
     year: "2026",
-    desc: "Genomic variant analysis pipeline processing 10M+ reads per sample with real-time clinical report generation.",
+    desc: "EduHub Global provides a user-friendly educational consultancy portal facilitating global study-abroad programs.",
     stack: ["Next.js", "Tailwind", "Typescript", "AWS"],
     logo: "/projects/p1.png", // ← replace with your logo
     projectUrl: "https://www.eduhubglobal.com.au/",
@@ -33,9 +33,9 @@ const PROJECTS = [
     name: "Healing Drive",
     cat: "Web Development",
     year: "2025",
-    desc: "High-conversion e-commerce platform with AI-powered recommendations, boosting revenue by 38% in 3 months.",
+    desc: "HHealingDrive HomeHealth features a responsive, accessibility-focused website designed for scheduling local healthcare services.",
     stack: ["Django", "AWS", "Postgres"],
-    logo: "projects/p2.png",
+    logo: "projects/p3.png",
     projectUrl: "https://www.healingdrivehomehealth.com/",
   },
   {
@@ -43,9 +43,9 @@ const PROJECTS = [
     name: "Aestheticbrowsandlashes",
     cat: "Web Development",
     year: "2025",
-    desc: "High-conversion e-commerce platform with AI-powered recommendations, boosting revenue by 38% in 3 months.",
+    desc: "Aesthetic Brows and Lashes offers a lifestyle-driven salon site with a frictionless booking pipeline.",
     stack: ["Django", "AWS", "Postgres"],
-    logo: "projects/p3.png",
+    logo: "projects/p2.png",
     projectUrl: "https://aestheticbrowsandlashes.com/",
   },
   {
@@ -53,7 +53,7 @@ const PROJECTS = [
     name: "Dhamala Capital",
     cat: "Web Development",
     year: "2025",
-    desc: "High-conversion e-commerce platform with AI-powered recommendations, boosting revenue by 38% in 3 months.",
+    desc: "Dhamala Capital delivers a high-performance financial platform featuring a secure, multi-step loan pre-application process.",
     stack: ["Next.js", "Stripe", "Postgres"],
     logo: "projects/p4.png",
     projectUrl: "https://dhamalacapital.com/",
@@ -92,7 +92,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       className="relative overflow-hidden cursor-pointer bg-white dark:bg-black"
       style={{ aspectRatio: "4/3" }}
     >
-      <Link href={project.projectUrl}>
+      <Link href={project.projectUrl} target="_blank" rel="noopener noreferrer">
         {/* Subtle red tint on hover */}
         <div
           className="absolute inset-0 z-0 transition-opacity duration-400"
@@ -104,7 +104,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
         {/* Index */}
         <span
-          className="absolute top-3.5 left-4 z-10 font-mono text-[9px] lg:text-[14px] tracking-[0.2em] text-red-600 transition-opacity duration-300"
+          className="absolute top-3.5 left-4 z-10  text-[9px] lg:text-[14px] tracking-[0.2em] text-red-600 transition-opacity duration-300"
           style={{ opacity: hovered ? 0 : 0.4 }}
         >
           {String(index + 1).padStart(2, "0")}
@@ -112,7 +112,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
         {/* Year */}
         <span
-          className="absolute top-3.5 right-4 z-10 font-mono text-[9px] lg:text-[14px] tracking-[0.2em] text-gray-400 transition-opacity duration-300"
+          className="absolute top-3.5 right-4 z-10  text-[9px] lg:text-[14px] tracking-[0.2em] text-gray-400 transition-opacity duration-300"
           style={{ opacity: hovered ? 0 : 0.5 }}
         >
           {project.year}
@@ -143,7 +143,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             </div>
             {/* Name fades out as panel slides up */}
             <span
-              className="font-mono text-[10px] lg:text-[14px] tracking-[0.2em] text-gray-500 dark:text-gray-400 uppercase transition-opacity duration-300"
+              className=" text-[10px] lg:text-[14px] tracking-[0.2em] text-gray-500 dark:text-gray-400 uppercase transition-opacity duration-300"
               style={{ opacity: hovered ? 0 : 1 }}
             >
               {project.name}
@@ -179,7 +179,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             transitionTimingFunction: "cubic-bezier(.22,1,.36,1)",
           }}
         >
-          <p className="font-mono text-[9px]  tracking-[0.25em] text-red-600 uppercase mb-1.5">
+          <p className=" text-[9px]  tracking-[0.25em] text-red-600 uppercase mb-1.5">
             {project.cat}
           </p>
           <h3
@@ -189,7 +189,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             {project.name}
           </h3>
           <p
-            className="font-mono text-[10px] lg:text-[14px] leading-[1.75] text-gray-500 dark:text-gray-400 mb-3"
+            className=" text-[10px] lg:text-[14px] leading-[1.75] text-gray-500 dark:text-gray-400 mb-3"
             style={{
               display: "-webkit-box",
               WebkitLineClamp: 2,
@@ -204,7 +204,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               {project.stack.map((s) => (
                 <span
                   key={s}
-                  className="font-mono text-[9px] lg:text-[14px] tracking-wide border border-gray-200 dark:border-gray-800 text-gray-500 dark:text-gray-500 px-2 py-0.5 uppercase"
+                  className=" text-[9px] lg:text-[14px] tracking-wide border border-gray-200 dark:border-gray-800 text-gray-500 dark:text-gray-500 px-2 py-0.5 uppercase"
                 >
                   {s}
                 </span>
@@ -232,7 +232,7 @@ export default function RemarkableProjects() {
         {/* Header */}
         <div className="flex items-end justify-between flex-wrap gap-4 mb-12">
           <div>
-            <p className="font-mono text-[10px] tracking-[0.3em] text-red-600 uppercase mb-4">
+            <p className=" text-[10px] tracking-[0.3em] text-red-600 uppercase mb-4">
               Our work
             </p>
             <h2
@@ -243,7 +243,7 @@ export default function RemarkableProjects() {
             </h2>
             <div className="w-8 h-[2px] bg-red-600 mt-5" />
           </div>
-          <span className="font-mono text-[10px] tracking-widest text-gray-400 uppercase pb-2">
+          <span className=" text-[10px] tracking-widest text-gray-400 uppercase pb-2">
             {PROJECTS.length} projects
           </span>
         </div>
@@ -260,7 +260,7 @@ export default function RemarkableProjects() {
           <div className="w-7 h-px bg-gray-200 dark:bg-gray-700" />
           <a
             href="/projects"
-            className="font-mono text-[10px] tracking-[0.25em] uppercase text-gray-400 hover:text-red-600 transition-colors duration-300"
+            className=" text-[10px] tracking-[0.25em] uppercase text-gray-400 hover:text-red-600 transition-colors duration-300"
           >
             View all case studies →
           </a>
